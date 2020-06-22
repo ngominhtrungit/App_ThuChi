@@ -29,6 +29,7 @@ namespace ThuChi
             LoadCTCP();
             AddUnboundColumn();
             AddRepository();
+            CustomCellMergeColumnGridView();
         }
 
         public void LoadCTCP()

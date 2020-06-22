@@ -238,7 +238,7 @@ namespace ThuChi
                 usercontrl.ShowDialog(this);
                 userCtrl_CDT_CPTC1.Show();
                 userCtrl_CDT_CPTC1.BringToFront();
-
+                userCtrl_CDT_CPTC1.LoadCTCDT_CPTC();
 
                 userCtrl_Dashboard1.Hide();
                 userCtrl_DoanhThu1.Hide();

@@ -57,7 +57,7 @@ namespace ThuChi
                 gridView1.Columns[2].DisplayFormat.FormatType = FormatType.DateTime;
                 gridView1.Columns[2].DisplayFormat.FormatString = "d/M/yyyy";
             }
-            DisableEditColumnsGridView.CustomEditColumnsGridView(gridView1, new int[] { 0, 1, 2 });
+            DisableEditColumnsGridView.CustomEditColumnsGridView(gridView1, new int[] { 0, 1, 2 ,3});
 
         }
 

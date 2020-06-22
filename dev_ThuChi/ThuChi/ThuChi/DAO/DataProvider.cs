@@ -509,6 +509,30 @@ namespace ThuChi.DAO
 
         }
 
+
+        public void ChoseComboBoxChangeTextBox_CPtcID_by_TenNgayCP(DateTime ngay, ComboBox comboBox, TextBox textBox)
+        {
+            using (SqlConnection saConn = new SqlConnection(this.connectionSTR))
+            {
+                saConn.Open();
+
+                string query = "exec [dbo].[proc_ShowChiPhiIDbyTenCaAndNgayTaoCP] @tenCa='" + comboBox.Text + "', @ngay = '" + ngay + "'";
+                SqlCommand cmd = new SqlCommand(query, saConn);
+
+                using (SqlDataReader saReader = cmd.ExecuteReader())
+                {
+                    while (saReader.Read())
+                    {
+                        var name = saReader.GetInt32(0);
+                        //textBox.Text = comboBox.SelectedItem.ToString();
+                        textBox.Text = name.ToString();
+                    }
+                }
+                saConn.Close();
+            }
+
+        }
+
         //ddang sưaeer
         public void ChoseComboBoxChangeTextBoxChiPhiTC(DateTime ngay, ComboBox comboBox, TextBox textBox)
         {
@@ -708,6 +732,29 @@ namespace ThuChi.DAO
                 saConn.Open();
 
                 string query = "exec proc_ShowChiPhiIDbyTenCaAndNgayTaoCP @tenCa ='" + comboBox.Text + "', @ngay ='" + ngay + "'";
+                SqlCommand cmd = new SqlCommand(query, saConn);
+
+                using (SqlDataReader saReader = cmd.ExecuteReader())
+                {
+                    while (saReader.Read())
+                    {
+                        var name = saReader.GetInt32(0);
+                        //textBox.Text = comboBox.SelectedItem.ToString();
+                        textBox.Text = name.ToString();
+                    }
+                }
+                saConn.Close();
+            }
+
+        }
+
+        public void ChoseComboBoxChangeTextBox_cdtID(ComboBox comboBox, TextBox textBox)
+        {
+            using (SqlConnection saConn = new SqlConnection(this.connectionSTR))
+            {
+                saConn.Open();
+
+                string query = "exec proc_RetrieveCDTID_by_TenCDT @tenCDT = N'"+comboBox.Text+"'";
                 SqlCommand cmd = new SqlCommand(query, saConn);
 
                 using (SqlDataReader saReader = cmd.ExecuteReader())

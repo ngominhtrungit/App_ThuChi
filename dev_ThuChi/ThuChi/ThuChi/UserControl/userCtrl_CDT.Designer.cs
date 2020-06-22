@@ -68,7 +68,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1372, 35);
+            this.panel1.Size = new System.Drawing.Size(1176, 28);
             this.panel1.TabIndex = 31;
             // 
             // label1
@@ -78,9 +78,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(519, 3);
+            this.label1.Location = new System.Drawing.Point(445, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(334, 29);
+            this.label1.Size = new System.Drawing.Size(267, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tạo, chỉnh sửa Chủ đầu tư";
             // 
@@ -95,19 +95,20 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(0, 35);
+            this.panel2.Location = new System.Drawing.Point(0, 28);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1372, 170);
+            this.panel2.Size = new System.Drawing.Size(1176, 138);
             this.panel2.TabIndex = 32;
             // 
             // txt_dc
             // 
             this.txt_dc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dc.Location = new System.Drawing.Point(530, 105);
+            this.txt_dc.Location = new System.Drawing.Point(454, 85);
+            this.txt_dc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_dc.Multiline = true;
             this.txt_dc.Name = "txt_dc";
-            this.txt_dc.Size = new System.Drawing.Size(193, 28);
+            this.txt_dc.Size = new System.Drawing.Size(166, 24);
             this.txt_dc.TabIndex = 43;
             // 
             // txt_Ten
@@ -124,37 +125,40 @@
             this.txt_Ten.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txt_Ten.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_Ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Ten.Location = new System.Drawing.Point(530, 35);
+            this.txt_Ten.Location = new System.Drawing.Point(454, 28);
+            this.txt_Ten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Ten.Multiline = true;
             this.txt_Ten.Name = "txt_Ten";
-            this.txt_Ten.Size = new System.Drawing.Size(193, 28);
+            this.txt_Ten.Size = new System.Drawing.Size(166, 24);
             this.txt_Ten.TabIndex = 42;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(493, 114);
+            this.label2.Location = new System.Drawing.Point(423, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 17);
+            this.label2.Size = new System.Drawing.Size(25, 13);
             this.label2.TabIndex = 41;
             this.label2.Text = "ĐC:";
             // 
             // txt_sdt
             // 
             this.txt_sdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_sdt.Location = new System.Drawing.Point(530, 70);
+            this.txt_sdt.Location = new System.Drawing.Point(454, 57);
+            this.txt_sdt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_sdt.Multiline = true;
             this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(193, 28);
+            this.txt_sdt.Size = new System.Drawing.Size(166, 24);
             this.txt_sdt.TabIndex = 40;
             this.txt_sdt.Leave += new System.EventHandler(this.txt_sdt_Leave);
             // 
             // bt_Save
             // 
-            this.bt_Save.Location = new System.Drawing.Point(739, 102);
+            this.bt_Save.Location = new System.Drawing.Point(633, 83);
+            this.bt_Save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Save.Name = "bt_Save";
-            this.bt_Save.Size = new System.Drawing.Size(104, 34);
+            this.bt_Save.Size = new System.Drawing.Size(89, 28);
             this.bt_Save.TabIndex = 34;
             this.bt_Save.Text = "Save";
             this.bt_Save.Click += new System.EventHandler(this.bt_Save_Click);
@@ -163,9 +167,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(472, 78);
+            this.label4.Location = new System.Drawing.Point(405, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 19;
             this.label4.Text = "Số ĐT:";
             // 
@@ -173,45 +177,52 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(487, 42);
+            this.label5.Location = new System.Drawing.Point(417, 34);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 17);
+            this.label5.Size = new System.Drawing.Size(29, 13);
             this.label5.TabIndex = 20;
             this.label5.Text = "Tên:";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridControl1.Location = new System.Drawing.Point(0, 205);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl1.Location = new System.Drawing.Point(0, 166);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1372, 251);
+            this.gridControl1.Size = new System.Drawing.Size(1176, 204);
             this.gridControl1.TabIndex = 33;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
+            this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 456);
+            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl2.Location = new System.Drawing.Point(0, 370);
             this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1372, 279);
+            this.gridControl2.Size = new System.Drawing.Size(1176, 227);
             this.gridControl2.TabIndex = 34;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
+            this.gridView2.DetailHeight = 284;
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
@@ -249,15 +260,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1372, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(1176, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 735);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 597);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1372, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1176, 0);
             // 
             // barDockControlLeft
             // 
@@ -265,19 +278,21 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 735);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 597);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1372, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1176, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 735);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 597);
             // 
             // userCtrl_CDT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.gridControl1);
@@ -287,8 +302,9 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "userCtrl_CDT";
-            this.Size = new System.Drawing.Size(1372, 735);
+            this.Size = new System.Drawing.Size(1176, 597);
             this.Load += new System.EventHandler(this.userCtrl_CDT_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

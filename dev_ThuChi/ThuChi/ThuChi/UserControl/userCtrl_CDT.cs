@@ -146,27 +146,6 @@ namespace ThuChi
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            //int id = (int)gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[0]);
-            //string tenCDT = gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[1]).ToString();
-            //int sdtCDT = (int)gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[2]);
-            //string diachiCDT = gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[3]).ToString();
-            //try
-            //{
-            //    if (MessageBox.Show("update tênCDT " + tenCDT + ", có ID:" + id.ToString() + "", "Thông Báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //    {
-            //        string query1 = "exec [dbo].[proc_UpdateCDT] @cdtID , @tenCDT , @sdtCDT , @diachiCDT ";
-            //        DataProvider.Instance.ExecuteQuery(query1, new object[] { id, tenCDT, sdtCDT.ToString(), diachiCDT });
-            //        AutoCloseMessageBox.Show("Update chủ đầu tư:'" + tenCDT + "' thành công!", "Thông Báo!!", 1000);
-            //    }
-            //    LoadCDT();
-            //}
-            //catch (SqlException ex)
-            //{
-            //    MessageBox.Show("Lỗi không update được " + id + ", Nếu có bất kỳ thắc mắc gì vui lòng liên hệ Trung sdt: 0902669115", "Lỗi.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-
-            //update
-
 
         }
 
@@ -177,9 +156,11 @@ namespace ThuChi
             string tenCDT = gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[1]).ToString();
             int sdtCDT = (int)gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[2]);
             string diachiCDT = gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[3]).ToString();
+
+            DialogResult res = MessageBox.Show("update tênCDT " + tenCDT + ", có ID:" + id.ToString() + "", "Thông Báo!", MessageBoxButtons.YesNo);
             try
             {
-                if (MessageBox.Show("update tênCDT " + tenCDT + ", có ID:" + id.ToString() + "", "Thông Báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (res == DialogResult.Yes)
                 {
                     string query1 = "exec [dbo].[proc_UpdateCDT] @cdtID , @tenCDT , @sdtCDT , @diachiCDT ";
                     DataProvider.Instance.ExecuteQuery(query1, new object[] { id, tenCDT, sdtCDT.ToString(), diachiCDT });
@@ -190,6 +171,17 @@ namespace ThuChi
             catch (SqlException ex)
             {
                 MessageBox.Show("Lỗi không update được " + id + ", Nếu có bất kỳ thắc mắc gì vui lòng liên hệ Trung sdt: 0902669115", "Lỗi.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //key press enter save
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                gridView1.CloseEditor();
+                gridView1.UpdateCurrentRow();
+                e.Handled = true;
             }
         }
     }
