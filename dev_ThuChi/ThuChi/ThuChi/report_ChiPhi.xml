@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource Name="SQL Data Source 1" ComponentName="dashboardSqlDataSource1">
+      <Connection Name="localhost_BaoCaoThuChi_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="." />
+          <Parameter Name="database" Value="BaoCaoThuChi" />
+          <Parameter Name="useIntegratedSecurity" Value="True" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="" />
+          <Parameter Name="password" Value="" />
+        </Parameters>
+      </Connection>
+      <Query Type="SelectQuery" Name="CTChiPhiTheoCa">
+        <Tables>
+          <Table Name="CTChiPhiTheoCa" X="530" Y="80" Width="125" Height="215" />
+          <Table Name="ChiPhiTheoCa" X="280" Y="80" Width="125" Height="131" />
+          <Table Name="DoanhThuTheoCa" X="80" Y="60" Width="125" Height="194" />
+          <Table Name="DoanhThu" X="110" Y="300" Width="125" Height="110" />
+          <Relation Type="Inner" Parent="CTChiPhiTheoCa" Nested="ChiPhiTheoCa">
+            <KeyColumn Parent="chiphitcID" Nested="chiphitcID" />
+          </Relation>
+          <Relation Type="Inner" Parent="ChiPhiTheoCa" Nested="DoanhThuTheoCa">
+            <KeyColumn Parent="caID" Nested="caID" />
+          </Relation>
+          <Relation Type="Inner" Parent="DoanhThuTheoCa" Nested="DoanhThu">
+            <KeyColumn Parent="doanhthuID" Nested="doanhthuID" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="DoanhThu" Name="ngaytaodt" />
+          <Column Table="DoanhThuTheoCa" Name="caID" />
+          <Column Table="DoanhThuTheoCa" Name="tenCa" />
+          <Column Table="CTChiPhiTheoCa" Name="mota" />
+          <Column Table="CTChiPhiTheoCa" Name="donvitinh" />
+          <Column Table="CTChiPhiTheoCa" Name="dongia" />
+          <Column Table="CTChiPhiTheoCa" Name="soluong" />
+          <Column Table="CTChiPhiTheoCa" Name="thanhtien" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="CTChiPhiTheoCa">
+            <Field Name="ngaytaodt" Type="DateTime" />
+            <Field Name="caID" Type="Int32" />
+            <Field Name="tenCa" Type="String" />
+            <Field Name="mota" Type="String" />
+            <Field Name="donvitinh" Type="String" />
+            <Field Name="dongia" Type="Double" />
+            <Field Name="soluong" Type="Int32" />
+            <Field Name="thanhtien" Type="Double" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" DataSource="dashboardSqlDataSource1" DataMember="CTChiPhiTheoCa">
+      <DataItems>
+        <Dimension DataMember="ngaytaodt" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
+        <Dimension DataMember="donvitinh" DefaultId="DataItem1" />
+        <Dimension DataMember="mota" DefaultId="DataItem2" />
+        <Measure DataMember="soluong" DefaultId="DataItem3" />
+        <Measure DataMember="dongia" DefaultId="DataItem4" />
+        <Measure DataMember="thanhtien" DefaultId="DataItem5" />
+        <Dimension DataMember="tenCa" DefaultId="DataItem6" />
+        <Measure DataMember="caID" DefaultId="DataItem7" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn Weight="132.11600429645546">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Weight="67.669172932330838">
+          <Measure DefaultId="DataItem7" />
+        </GridMeasureColumn>
+        <GridDimensionColumn Weight="46.401718582169721">
+          <Dimension DefaultId="DataItem6" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="58.646616541353389">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="52.846401718582179">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Weight="79.914070891514513">
+          <Measure DefaultId="DataItem3" />
+        </GridMeasureColumn>
+        <GridMeasureColumn Weight="76.047261009667039">
+          <Measure DefaultId="DataItem4" />
+        </GridMeasureColumn>
+        <GridMeasureColumn Weight="86.358754027926977">
+          <Measure DefaultId="DataItem5" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <RangeFilter ComponentName="rangeFilterDashboardItem1" Name="Range Filter 1" ShowCaption="true" DataSource="dashboardSqlDataSource1" DataMember="CTChiPhiTheoCa">
+      <DataItems>
+        <Dimension DataMember="ngaytaodt" DateTimeGroupInterval="MonthYear" DefaultId="DataItem2" />
+        <Measure DataMember="thanhtien" DefaultId="DataItem0" />
+      </DataItems>
+      <Argument DefaultId="DataItem2" />
+      <Series>
+        <Simple SeriesType="FullStackedBar">
+          <Value DefaultId="DataItem0" />
+        </Simple>
+      </Series>
+      <DateTimePeriods>
+        <DateTimePeriod Name="This Month">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Interval="Month" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit Interval="Month" Offset="1" />
+          </EndLimit>
+        </DateTimePeriod>
+        <DateTimePeriod Name="Last Month">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Interval="Month" Offset="-1" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit Interval="Month" />
+          </EndLimit>
+        </DateTimePeriod>
+        <DateTimePeriod Name="Last 3 Months">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Interval="Month" Offset="-3" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit Interval="Month" />
+          </EndLimit>
+        </DateTimePeriod>
+        <DateTimePeriod Name="Last 6 Months">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Interval="Month" Offset="-6" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit Interval="Month" />
+          </EndLimit>
+        </DateTimePeriod>
+        <DateTimePeriod Name="Last 12 Months">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Interval="Month" Offset="-12" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit Interval="Month" />
+          </EndLimit>
+        </DateTimePeriod>
+        <DateTimePeriod Name="Last Year">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Offset="-1" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit />
+          </EndLimit>
+        </DateTimePeriod>
+        <DateTimePeriod Name="Last 2 Years">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Offset="-2" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit />
+          </EndLimit>
+        </DateTimePeriod>
+      </DateTimePeriods>
+    </RangeFilter>
+    <Grid ComponentName="gridDashboardItem2" Name="Grid 2" DataSource="dashboardSqlDataSource1" DataMember="CTChiPhiTheoCa">
+      <DataItems>
+        <Dimension DataMember="ngaytaodt" DateTimeGroupInterval="MonthYear" DefaultId="DataItem1" />
+        <Measure DataMember="thanhtien" DefaultId="DataItem0" />
+        <Dimension DataMember="ngaytaodt" DateTimeGroupInterval="MonthYear" DefaultId="DataItem2" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure DefaultId="DataItem0" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <SparklineArgument DefaultId="DataItem1" />
+      <GridOptions />
+    </Grid>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical" Weight="100">
+      <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="25.99388379204893" />
+      <LayoutGroup Weight="74.006116207951067">
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="74.006116207951067" />
+        <LayoutItem DashboardItem="gridDashboardItem2" Weight="74.006116207951067" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
