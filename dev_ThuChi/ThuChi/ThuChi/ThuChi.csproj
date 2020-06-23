@@ -134,6 +134,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm\frm_DTTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frm_DTTC.Designer.cs">
+      <DependentUpon>frm_DTTC.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm\frm_InsertDoanhThuNgay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,12 @@
     <Compile Include="UserControl\userCtrl_ReportChiPhiTheoCa.Designer.cs">
       <DependentUpon>userCtrl_ReportChiPhiTheoCa.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\userCtrl_TienConLaiCuoiCa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\userCtrl_TienConLaiCuoiCa.Designer.cs">
+      <DependentUpon>userCtrl_TienConLaiCuoiCa.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formBaoCao\Report_DTBanHang.resx">
       <DependentUpon>Report_DTBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frm_DTTC.resx">
+      <DependentUpon>frm_DTTC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frm_InsertDoanhThuNgay.resx">
       <DependentUpon>frm_InsertDoanhThuNgay.cs</DependentUpon>
@@ -303,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\userCtrl_ReportChiPhiTheoCa.resx">
       <DependentUpon>userCtrl_ReportChiPhiTheoCa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\userCtrl_TienConLaiCuoiCa.resx">
+      <DependentUpon>userCtrl_TienConLaiCuoiCa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

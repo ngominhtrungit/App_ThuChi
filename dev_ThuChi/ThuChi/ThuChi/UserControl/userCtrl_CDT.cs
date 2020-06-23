@@ -129,7 +129,7 @@ namespace ThuChi
         private void bt_Save_Click(object sender, EventArgs e)
         {
             string query = "exec proc_InsertCDT @tenCDT , @sdtCDT , @diachiCDT ";
-            DataProvider.Instance.ExecuteQuery(query, new object[] { txt_Ten.Text,txt_sdt.Text,txt_dc.Text });
+            DataProvider.Instance.ExecuteQuery(query, new object[] { txt_Ten.Text, txt_sdt.Text, txt_dc.Text });
             LoadCDT();
         }
 

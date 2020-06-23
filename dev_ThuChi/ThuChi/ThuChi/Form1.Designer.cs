@@ -341,7 +341,7 @@
             this.rb_TotalDTCuoiNgay.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup8});
             this.rb_TotalDTCuoiNgay.Name = "rb_TotalDTCuoiNgay";
-            this.rb_TotalDTCuoiNgay.Text = "Tổng Doanh Thu Thực Cuối Ngày";
+            this.rb_TotalDTCuoiNgay.Text = "Tổng Doanh Thu Thực Cuối Ca";
             // 
             // ribbonPageGroup8
             // 
@@ -408,6 +408,7 @@
             // 
             this.userCtrl_DoanhThuTheoCa1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_DoanhThuTheoCa1.Location = new System.Drawing.Point(0, 178);
+            this.userCtrl_DoanhThuTheoCa1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userCtrl_DoanhThuTheoCa1.Name = "userCtrl_DoanhThuTheoCa1";
             this.userCtrl_DoanhThuTheoCa1.Size = new System.Drawing.Size(1625, 694);
             this.userCtrl_DoanhThuTheoCa1.TabIndex = 3;
@@ -444,6 +445,7 @@
             // 
             this.userCtrl_CDT1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_CDT1.Location = new System.Drawing.Point(0, 178);
+            this.userCtrl_CDT1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userCtrl_CDT1.Name = "userCtrl_CDT1";
             this.userCtrl_CDT1.Size = new System.Drawing.Size(1625, 694);
             this.userCtrl_CDT1.TabIndex = 13;
@@ -452,6 +454,7 @@
             // 
             this.userCtrl_CDT_CPTC1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_CDT_CPTC1.Location = new System.Drawing.Point(0, 178);
+            this.userCtrl_CDT_CPTC1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userCtrl_CDT_CPTC1.Name = "userCtrl_CDT_CPTC1";
             this.userCtrl_CDT_CPTC1.Size = new System.Drawing.Size(1625, 694);
             this.userCtrl_CDT_CPTC1.TabIndex = 15;

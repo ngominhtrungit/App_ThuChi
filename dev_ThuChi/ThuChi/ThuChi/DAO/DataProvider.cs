@@ -502,6 +502,9 @@ namespace ThuChi.DAO
                         var name = saReader.GetDouble(0);
                         //textBox.Text = comboBox.SelectedItem.ToString();
                         textBox.Text = name.ToString();
+
+                        //check điều kiện nếu như tiền còn lại cuối ca ==null thì 
+                       
                     }
                 }
                 saConn.Close();

@@ -224,6 +224,7 @@
             this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "", null, "dongia")});
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsFind.AlwaysVisible = true;
             this.gridView2.OptionsMenu.ShowFooterItem = true;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowFooter = true;

@@ -35,10 +35,38 @@ namespace ThuChi.UserControl
         {
             try
             {
-                 string query = "exec [dbo].[proc_InsertDoanhThuTheoCa] @tenCa , @doanhthuID , @tiendelai , @doanhthutheoca , @doanhthukhac ";
-                 gridControl1.DataSource = DataProvider.Instance.ExecuteQuery(query,new object[] {txt_TenCa.Text,txt_doanhthuID.Text,txt_Tiendelai.Text,txt_Dttrongngay.Text,txt_Dtkhac.Text });
-                 LoadDoanhThuTheoCa();
-                 ClearInput();
+                if (txt_TenCa.Text != "" && txt_doanhthuID.Text != "" && txt_Tiendelai.Text != "" && txt_Dttrongngay.Text != "")
+                {
+                    string query = "exec [dbo].[proc_InsertDoanhThuTheoCa] @tenCa , @doanhthuID , @tiendelai , @doanhthutheoca , @doanhthukhac ";
+                    gridControl1.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { txt_TenCa.Text, txt_doanhthuID.Text, txt_Tiendelai.Text, txt_Dttrongngay.Text, txt_Dtkhac.Text });
+                    LoadDoanhThuTheoCa();
+                    ClearInput();
+                }
+                else if (txt_TenCa.Text == "")
+                {
+                    MessageBox.Show("trường Tên Ca không được bỏ trống!","Thông Báo!");
+                    return;
+                }
+                else if (txt_doanhthuID.Text == "")
+                {
+                    MessageBox.Show("Phải chọn ngày để tạo doanh thu theo ca. \n'Ngày Hiện Tại'!", "Thông Báo!");
+                    return;
+                }
+                else if (txt_Tiendelai.Text == "")
+                {
+                    MessageBox.Show("Phải chọn ngày, sau đó chọn ca gần nhất để Chọn Tiền để lại!", "Thông Báo!");
+                    return;
+                }
+                else if (txt_Dttrongngay.Text == "")
+                {
+                    MessageBox.Show("Nhập vào doanh thu trong ngày, không được bỏ trống!", "Thông Báo!");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Bạn đã bỏ trống toàn bộ các trường input dữ liệu, xin mời nhập!", "Thông Báo!");
+                    return;
+                }
             }
             catch (SqlException ex)
             {
@@ -61,6 +89,7 @@ namespace ThuChi.UserControl
             LoadDoanhThuTheoCa();
             AddUnboundColumn();
             AddRepository();
+            CustomCellMergeColumnGridView();
             //LoadtenCatoComboBox();
         }
 
@@ -74,7 +103,7 @@ namespace ThuChi.UserControl
                 gridView1.Columns[2].DisplayFormat.FormatString = "d/M/yyyy";
             }
             
-            CustomCellMergeColumnGridView();
+            //CustomCellMergeColumnGridView();
             DisableEditColumnsGridView.CustomEditColumnsGridView(gridView1, new int[] { 0, 1, 2});
             
 
@@ -101,7 +130,16 @@ namespace ThuChi.UserControl
 
         private void cb_tenCa_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txt_Tiendelai.Clear();
             DataProvider.Instance.ChoseComboBoxChangeTextBoxDTTC(datetime_ChoseNgaytenCA.Value,cb_tenCa, txt_Tiendelai);
+            if (txt_Tiendelai.Text == "")
+            {
+                DialogResult result= MessageBox.Show("'" + txt_Tiendelai.Text + "' hiện tại chưa có tổng hợp tiền. Chỉ cần qua Tab 'Tiền Còn Lại Cuối Ca' ==> Save là được!","Thông báo!",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                if (result==DialogResult.Yes)
+                {
+                    //mở frm TienConLaiCuoiNgay
+                }
+            }
         }
 
         private void CustomCellMergeColumnGridView()
@@ -199,6 +237,26 @@ namespace ThuChi.UserControl
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+           
+        }
+
+        private void txt_TenCa_Leave(object sender, EventArgs e)
+        {
+            RegexCustom.Instance.CheckInput("^[a-z0-9]+( [a-z0-9]+)*$", "Không đúng định dạng, không được có khoảng trắng ở đầu chuỗi và ở cuối chuỗi, ở giữa chỉ chứa 1 khoảng trắng. \n VD: 'ca 1': hợp lệ \n ' ca 1':không hợp lệ ", txt_TenCa, pictureBox1);
+        }
+
+        private void txt_Tiendelai_Leave(object sender, EventArgs e)
+        {
+            RegexCustom.Instance.CheckInput("^[-]?[0-9]+[,.]?[0-9]*([\'/][0-9]+[,.]?[0-9]*)*$", "Không đúng định dạng, định dạng đúng phải là số, \n Vd: 100000 \nVd: 654321,5", txt_Tiendelai, pictureBox4);
+        }
+
+        private void txt_Dtkhac_Leave(object sender, EventArgs e)
+        {
+            RegexCustom.Instance.CheckInput("^[-]?[0-9]+[,.]?[0-9]*([\'/][0-9]+[,.]?[0-9]*)*$", "Không đúng định dạng, định dạng đúng phải là số, \n Vd: 100000 \nVd: 654321,5", txt_Dtkhac, pictureBox3);
+        }
+
+        private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
             int id = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[0]);
             int doanhthuID = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[1]);
             string ngay = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[2]).ToString();
@@ -228,19 +286,14 @@ namespace ThuChi.UserControl
             }
         }
 
-        private void txt_TenCa_Leave(object sender, EventArgs e)
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
         {
-            RegexCustom.Instance.CheckInput("^[a-z0-9]+( [a-z0-9]+)*$", "Không đúng định dạng, không được có khoảng trắng ở đầu chuỗi và ở cuối chuỗi, ở giữa chỉ chứa 1 khoảng trắng. \n VD: 'ca 1': hợp lệ \n ' ca 1':không hợp lệ ", txt_TenCa, pictureBox1);
-        }
-
-        private void txt_Tiendelai_Leave(object sender, EventArgs e)
-        {
-            RegexCustom.Instance.CheckInput("^[-]?[0-9]+[,.]?[0-9]*([\'/][0-9]+[,.]?[0-9]*)*$", "Không đúng định dạng, định dạng đúng phải là số, \n Vd: 100000 \nVd: 654321,5", txt_Tiendelai, pictureBox4);
-        }
-
-        private void txt_Dtkhac_Leave(object sender, EventArgs e)
-        {
-            RegexCustom.Instance.CheckInput("^[-]?[0-9]+[,.]?[0-9]*([\'/][0-9]+[,.]?[0-9]*)*$", "Không đúng định dạng, định dạng đúng phải là số, \n Vd: 100000 \nVd: 654321,5", txt_Dtkhac, pictureBox3);
+            if (e.KeyCode == Keys.Enter)
+            {
+                gridView1.CloseEditor();
+                gridView1.UpdateCurrentRow();
+                e.Handled = true;
+            }
         }
     }
 }

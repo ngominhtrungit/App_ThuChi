@@ -16,6 +16,7 @@ using DevExpress.XtraGrid.Columns;
 using System.Globalization;
 using DevExpress.XtraEditors.Repository;
 using ThuChi.Class;
+using ThuChi.frm;
 
 namespace ThuChi.UserControl
 {
@@ -24,6 +25,7 @@ namespace ThuChi.UserControl
         public userCtrl_DoanhThu()
         {
             InitializeComponent();
+            //NewRowAdd();
         }
 
         private void userCtrl_DoanhThu_Load(object sender, EventArgs e)
@@ -35,7 +37,8 @@ namespace ThuChi.UserControl
 
             AddUnboundColumn();
             AddRepository();
-            
+
+
         }
 
         public void LoadDoanhThu()
@@ -70,7 +73,8 @@ namespace ThuChi.UserControl
             //textEdit1.EditValue = (sender as GridView).GetFocusedRowCellValue("chiphiID");
             //MessageBox.Show("ok,"+abc);
             LoadDataByDoanhThuID((int)id);
-            DisableEditColumnsGridView.CustomEditColumnsGridView(gridView2, new int[] { 0, 1 ,2});
+            DisableEditColumnsGridView.CustomEditColumnsGridView(gridView2, new int[] { 0, 1, 2 });
+
         }
 
         private void LoadDataByDoanhThuID(int id)
@@ -79,7 +83,7 @@ namespace ThuChi.UserControl
             {
                 string query = "exec proc_ShowDoanhThuTheoCa_by_doanhthuID @doanhthuID='" + id + "'";
                 gridControl2.DataSource = DataProvider.Instance.ExecuteQuery(query);
-                
+
 
             }
             catch (SqlException ex)
@@ -102,7 +106,7 @@ namespace ThuChi.UserControl
 
         void edit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            int id =(int) gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[0]);
+            int id = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[0]);
             string ngay = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[1]).ToString();
             DateTime dt = DateTime.Parse(ngay, new CultureInfo("en-CA"));
             try
@@ -110,7 +114,7 @@ namespace ThuChi.UserControl
                 if (MessageBox.Show("Xóa Chi phí ID " + id + ", thuộc ngày " + dt.ToString("d/M/yyyy"), "Thông Báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     string query = "exec proc_DeleteDoanhThu @doanhthuID ";
-                    DataProvider.Instance.ExecuteQuery(query,new object[] { id.ToString() });
+                    DataProvider.Instance.ExecuteQuery(query, new object[] { id.ToString() });
                     LoadDoanhThu();
                 }
             }
@@ -131,6 +135,11 @@ namespace ThuChi.UserControl
 
         private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+
+        }
+
+        private void gridView2_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
             int id = (int)gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[0]);
             int doanhthuID = (int)gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[1]);
             string ngay = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[2]).ToString();
@@ -149,7 +158,7 @@ namespace ThuChi.UserControl
 
                 }
 
-                //LoadDataByDoanhThuID(id);
+                LoadDataByDoanhThuID(doanhthuID);
 
 
             }
@@ -158,5 +167,63 @@ namespace ThuChi.UserControl
                 MessageBox.Show("Lỗi không update được " + id + ", thuộc ngày " + ngay + "! Nếu có bất kỳ thắc mắc gì vui lòng liên hệ Trung sdt: 0902669115", "Lỗi.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void gridView2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                gridView2.CloseEditor();
+                gridView2.UpdateCurrentRow();
+                e.Handled = true;
+            }
+        }
+
+        private void gridView2_ShowingEditor(object sender, CancelEventArgs e)
+        {
+
+            //string tenCA = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[3]).ToString();
+            //float tiendelai = float.Parse(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[4]).ToString());
+            //float dttrongngay = float.Parse(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5]).ToString());
+            //float dtkhac = float.Parse(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6]).ToString());
+
+            //if (!gridView2.IsNewItemRow(gridView2.FocusedRowHandle))
+            //    e.Cancel = true;
+            //DisableEditColumnsGridView.CustomEditColumnsGridView(gridView2, new int[] { 0,1,2 });
+        }
+
+        private void gridView2_ShownEditor(object sender, EventArgs e)
+        {
+            GridView view = (GridView)sender;
+            if (view.ActiveEditor is CheckedComboBoxEdit)
+            {
+                CheckedComboBoxEdit editor = (CheckedComboBoxEdit)view.ActiveEditor;
+                editor.EditValue = editor.Properties.Items[0].Value.ToString() + editor.Properties.SeparatorChar + editor.Properties.Items[2].Value.ToString();
+                editor.Properties.Items[2].Enabled = false;
+            }
+        }
+
+        private void bt_Show_Frm_DTTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //show frm DTTC
+            using (frm_DTTC frm = new frm_DTTC())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void gridView2_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+                popupMenu1.ShowPopup(Control.MousePosition);
+        }
+
+
+        //private void NewRowAdd()
+        //{
+        //    gridView2.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+        //    gridView2.ShowingEditor += new CancelEventHandler(gridView2_ShowingEditor);
+        //}
+
+
     }
 }
