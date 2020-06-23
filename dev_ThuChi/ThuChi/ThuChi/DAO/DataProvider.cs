@@ -536,6 +536,29 @@ namespace ThuChi.DAO
 
         }
 
+        public void ChoseComboBoxChangeTextBox_caID_byTenCa_TenNgayDT(DateTime ngay, ComboBox comboBox, TextBox textBox)
+        {
+            using (SqlConnection saConn = new SqlConnection(this.connectionSTR))
+            {
+                saConn.Open();
+
+                string query = "exec [dbo].[proc_ShowCaIDbyTenCa_NgaytaoDT] @tenCa='" + comboBox.Text + "', @ngay = '" + ngay + "'";
+                SqlCommand cmd = new SqlCommand(query, saConn);
+
+                using (SqlDataReader saReader = cmd.ExecuteReader())
+                {
+                    while (saReader.Read())
+                    {
+                        var name = saReader.GetInt32(0);
+                        //textBox.Text = comboBox.SelectedItem.ToString();
+                        textBox.Text = name.ToString();
+                    }
+                }
+                saConn.Close();
+            }
+
+        }
+
         //ddang sưaeer
         public void ChoseComboBoxChangeTextBoxChiPhiTC(DateTime ngay, ComboBox comboBox, TextBox textBox)
         {

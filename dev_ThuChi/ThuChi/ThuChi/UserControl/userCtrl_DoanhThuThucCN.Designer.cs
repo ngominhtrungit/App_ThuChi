@@ -31,14 +31,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.date_ChoseNgaySave = new System.Windows.Forms.DateTimePicker();
             this.txt_doanhthuID = new System.Windows.Forms.TextBox();
-            this.txt_cdtID = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.bt_Save = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -47,10 +47,10 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.date_ChoseNgaySave);
             this.panel2.Controls.Add(this.txt_doanhthuID);
-            this.panel2.Controls.Add(this.txt_cdtID);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.bt_Save);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -90,36 +90,6 @@
             this.txt_doanhthuID.Name = "txt_doanhthuID";
             this.txt_doanhthuID.Size = new System.Drawing.Size(193, 28);
             this.txt_doanhthuID.TabIndex = 42;
-            // 
-            // txt_cdtID
-            // 
-            this.txt_cdtID.AutoCompleteCustomSource.AddRange(new string[] {
-            "cp0",
-            "cp1",
-            "cp2",
-            "cp3",
-            "cp4",
-            "cp5",
-            "cp6",
-            "cp7"});
-            this.txt_cdtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_cdtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_cdtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cdtID.Location = new System.Drawing.Point(299, 21);
-            this.txt_cdtID.Multiline = true;
-            this.txt_cdtID.Name = "txt_cdtID";
-            this.txt_cdtID.Size = new System.Drawing.Size(193, 28);
-            this.txt_cdtID.TabIndex = 36;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(252, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 17);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "id:";
             // 
             // bt_Save
             // 
@@ -181,6 +151,24 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(521, 52);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 44;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(518, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 17);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Tên Ca:";
+            // 
             // userCtrl_DoanhThuThucCN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -206,13 +194,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker date_ChoseNgaySave;
         private System.Windows.Forms.TextBox txt_doanhthuID;
-        private System.Windows.Forms.TextBox txt_cdtID;
-        private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.SimpleButton bt_Save;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

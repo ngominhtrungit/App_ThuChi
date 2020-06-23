@@ -711,3 +711,4 @@ D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.frm.frm_DTTC.resources
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.userCtrl_TienConLaiCuoiCa.resources
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.csprojAssemblyReference.cache
+D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.frm.frm_TienConLaiCuoiCa.resources

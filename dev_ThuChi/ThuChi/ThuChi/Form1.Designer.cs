@@ -79,6 +79,7 @@
             this.userCtrl_DTBanHang1 = new ThuChi.userCtrl_DTBanHang();
             this.userCtrl_ReportCDTTien1 = new ThuChi.UserControl.userCtrl_ReportCDTTien();
             this.userCtrl_ReportChiPhiTheoCa1 = new ThuChi.UserControl.userCtrl_ReportChiPhiTheoCa();
+            this.userCtrl_TienConLaiCuoiCa1 = new ThuChi.UserControl.userCtrl_TienConLaiCuoiCa();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -483,11 +484,20 @@
             this.userCtrl_ReportChiPhiTheoCa1.Size = new System.Drawing.Size(1625, 694);
             this.userCtrl_ReportChiPhiTheoCa1.TabIndex = 23;
             // 
+            // userCtrl_TienConLaiCuoiCa1
+            // 
+            this.userCtrl_TienConLaiCuoiCa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userCtrl_TienConLaiCuoiCa1.Location = new System.Drawing.Point(0, 178);
+            this.userCtrl_TienConLaiCuoiCa1.Name = "userCtrl_TienConLaiCuoiCa1";
+            this.userCtrl_TienConLaiCuoiCa1.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_TienConLaiCuoiCa1.TabIndex = 25;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1625, 872);
+            this.Controls.Add(this.userCtrl_TienConLaiCuoiCa1);
             this.Controls.Add(this.userCtrl_ReportChiPhiTheoCa1);
             this.Controls.Add(this.userCtrl_ReportCDTTien1);
             this.Controls.Add(this.userCtrl_DTBanHang1);
@@ -564,6 +574,7 @@
         private userCtrl_DTBanHang userCtrl_DTBanHang1;
         private UserControl.userCtrl_ReportCDTTien userCtrl_ReportCDTTien1;
         private UserControl.userCtrl_ReportChiPhiTheoCa userCtrl_ReportChiPhiTheoCa1;
+        private UserControl.userCtrl_TienConLaiCuoiCa userCtrl_TienConLaiCuoiCa1;
     }
 }
 

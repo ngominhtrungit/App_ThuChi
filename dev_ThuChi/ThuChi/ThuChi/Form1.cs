@@ -33,6 +33,7 @@ namespace ThuChi
             userCtrl_CDT_CPTC1.Hide();
             userCtrl_ReportChiPhiTheoCa1.Hide();
             userCtrl_ReportCDTTien1.Hide();
+            userCtrl_TienConLaiCuoiCa1.Hide();
         }
 
         void LoadData()
@@ -49,11 +50,18 @@ namespace ThuChi
             {
                 usercontrl.ShowDialog(this);
 
+                userCtrl_DoanhThu1.Hide();
+                userCtrl_DoanhThuTheoCa1.Hide();
+                userCtrl_Dashboard1.Hide();
+                userCtrl_DTBanHang1.Hide();
+                userCtrl_ChiPhi2.Hide();
+                userCtrl_ChiPhi2.ResetText();
+                userCtrl_CTCP2.Hide();
                 userCtrl_CDT1.Hide();
                 userCtrl_CDT_CPTC1.Hide();
-                userCtrl_DTBanHang1.Hide();
-                userCtrl_ReportCDTTien1.Hide();
                 userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_ReportCDTTien1.Hide();
+                userCtrl_TienConLaiCuoiCa1.Hide();
 
 
             }
@@ -74,11 +82,13 @@ namespace ThuChi
                 userCtrl_Dashboard1.Hide();
                 userCtrl_DTBanHang1.Hide();
                 userCtrl_ChiPhi2.Hide();
+                userCtrl_ChiPhi2.ResetText();
                 userCtrl_CTCP2.Hide();
                 userCtrl_CDT1.Hide();
-                userCtrl_ReportCDTTien1.Hide();
                 userCtrl_CDT_CPTC1.Hide();
                 userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_ReportCDTTien1.Hide();
+                userCtrl_TienConLaiCuoiCa1.Hide();
 
             }
         }
@@ -92,15 +102,17 @@ namespace ThuChi
                 userCtrl_DTBanHang1.BringToFront();
                 userCtrl_DTBanHang1.ReloadData();
 
-                userCtrl_DoanhThuTheoCa1.Hide();
                 userCtrl_DoanhThu1.Hide();
+                userCtrl_DoanhThuTheoCa1.Hide();
                 userCtrl_Dashboard1.Hide();
                 userCtrl_ChiPhi2.Hide();
+                userCtrl_ChiPhi2.ResetText();
                 userCtrl_CTCP2.Hide();
                 userCtrl_CDT1.Hide();
-                userCtrl_ReportCDTTien1.Hide();
                 userCtrl_CDT_CPTC1.Hide();
                 userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_ReportCDTTien1.Hide();
+                userCtrl_TienConLaiCuoiCa1.Hide();
 
 
             }
@@ -116,15 +128,17 @@ namespace ThuChi
                 userCtrl_CTCP2.Show();
                 userCtrl_CTCP2.BringToFront();
 
-                userCtrl_DTBanHang1.Hide();
-                userCtrl_DoanhThuTheoCa1.Hide();
                 userCtrl_DoanhThu1.Hide();
+                userCtrl_DoanhThuTheoCa1.Hide();
                 userCtrl_Dashboard1.Hide();
+                userCtrl_DTBanHang1.Hide();
                 userCtrl_ChiPhi2.Hide();
+                userCtrl_ChiPhi2.ResetText();
                 userCtrl_CDT1.Hide();
                 userCtrl_CDT_CPTC1.Hide();
-                userCtrl_ReportCDTTien1.Hide();
                 userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_ReportCDTTien1.Hide();
+                userCtrl_TienConLaiCuoiCa1.Hide();
 
             }
         }
@@ -139,15 +153,16 @@ namespace ThuChi
                 userCtrl_ChiPhi2.Show();
                 userCtrl_ChiPhi2.BringToFront();
 
-                userCtrl_DTBanHang1.Hide();
-                userCtrl_DoanhThuTheoCa1.Hide();
                 userCtrl_DoanhThu1.Hide();
+                userCtrl_DoanhThuTheoCa1.Hide();
                 userCtrl_Dashboard1.Hide();
+                userCtrl_DTBanHang1.Hide();
                 userCtrl_CTCP2.Hide();
                 userCtrl_CDT1.Hide();
                 userCtrl_CDT_CPTC1.Hide();
-                userCtrl_ReportCDTTien1.Hide();
                 userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_ReportCDTTien1.Hide();
+                userCtrl_TienConLaiCuoiCa1.Hide();
 
             }
         }
@@ -161,16 +176,17 @@ namespace ThuChi
                 userCtrl_CDT1.BringToFront();
                 userCtrl_CDT1.LoadCDT();
 
-                userCtrl_ChiPhi2.Hide();
-                userCtrl_DTBanHang1.Hide();
-                userCtrl_DoanhThuTheoCa1.Hide();
                 userCtrl_DoanhThu1.Hide();
+                userCtrl_DoanhThuTheoCa1.Hide();
                 userCtrl_Dashboard1.Hide();
-                userCtrl_CDT_CPTC1.Hide();
-                userCtrl_ReportCDTTien1.Hide();
-
-                userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_DTBanHang1.Hide();
+                userCtrl_ChiPhi2.Hide();
+                userCtrl_ChiPhi2.ResetText();
                 userCtrl_CTCP2.Hide();
+                userCtrl_CDT_CPTC1.Hide();
+                userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_ReportCDTTien1.Hide();
+                userCtrl_TienConLaiCuoiCa1.Hide();
             }
         }
 
@@ -179,11 +195,23 @@ namespace ThuChi
             using (userCtrl_Loading usercontrl = new userCtrl_Loading(LoadData))
             {
                 usercontrl.ShowDialog(this);
+                userCtrl_TienConLaiCuoiCa1.LoadDataTienConLaiTheoCa();
+                userCtrl_TienConLaiCuoiCa1.Show();
+                userCtrl_TienConLaiCuoiCa1.BringToFront();
 
-                userCtrl_CTCP2.Hide();
+
+
+                userCtrl_DoanhThu1.Hide();
+                userCtrl_DoanhThuTheoCa1.Hide();
+                userCtrl_Dashboard1.Hide();
                 userCtrl_DTBanHang1.Hide();
-                userCtrl_ReportCDTTien1.Hide();
+                userCtrl_ChiPhi2.Hide();
+                userCtrl_ChiPhi2.ResetText();
+                userCtrl_CTCP2.Hide();
+                userCtrl_CDT1.Hide();
+                userCtrl_CDT_CPTC1.Hide();
                 userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_ReportCDTTien1.Hide();
 
             }
         }
@@ -197,17 +225,17 @@ namespace ThuChi
                 userCtrl_DoanhThu1.BringToFront();
                 userCtrl_DoanhThu1.LoadDoanhThu();
 
-                userCtrl_Dashboard1.Hide();
                 userCtrl_DoanhThuTheoCa1.Hide();
+                userCtrl_Dashboard1.Hide();
                 userCtrl_DTBanHang1.Hide();
                 userCtrl_ChiPhi2.Hide();
+                userCtrl_ChiPhi2.ResetText();
                 userCtrl_CTCP2.Hide();
                 userCtrl_CDT1.Hide();
                 userCtrl_CDT_CPTC1.Hide();
-                userCtrl_ReportCDTTien1.Hide();
-
-                userCtrl_DoanhThu1.Refresh();
                 userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_ReportCDTTien1.Hide();
+                userCtrl_TienConLaiCuoiCa1.Hide();
             }
         }
 
@@ -223,11 +251,13 @@ namespace ThuChi
                 userCtrl_DoanhThuTheoCa1.Hide();
                 userCtrl_DTBanHang1.Hide();
                 userCtrl_ChiPhi2.Hide();
+                userCtrl_ChiPhi2.ResetText();
                 userCtrl_CTCP2.Hide();
                 userCtrl_CDT1.Hide();
                 userCtrl_CDT_CPTC1.Hide();
-                userCtrl_ReportCDTTien1.Hide();
                 userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_ReportCDTTien1.Hide();
+                userCtrl_TienConLaiCuoiCa1.Hide();
             }
         }
 
@@ -240,15 +270,17 @@ namespace ThuChi
                 userCtrl_CDT_CPTC1.BringToFront();
                 userCtrl_CDT_CPTC1.LoadCTCDT_CPTC();
 
-                userCtrl_Dashboard1.Hide();
                 userCtrl_DoanhThu1.Hide();
                 userCtrl_DoanhThuTheoCa1.Hide();
+                userCtrl_Dashboard1.Hide();
                 userCtrl_DTBanHang1.Hide();
                 userCtrl_ChiPhi2.Hide();
+                userCtrl_ChiPhi2.ResetText();
                 userCtrl_CTCP2.Hide();
-                userCtrl_ReportCDTTien1.Hide();
                 userCtrl_CDT1.Hide();
                 userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_ReportCDTTien1.Hide();
+                userCtrl_TienConLaiCuoiCa1.Hide();
 
             }
         }
@@ -261,15 +293,17 @@ namespace ThuChi
                 userCtrl_ReportCDTTien1.BringToFront();
                 userCtrl_ReportCDTTien1.ReloadData();
 
-                userCtrl_CDT_CPTC1.Hide();
-                userCtrl_Dashboard1.Hide();
                 userCtrl_DoanhThu1.Hide();
                 userCtrl_DoanhThuTheoCa1.Hide();
+                userCtrl_Dashboard1.Hide();
                 userCtrl_DTBanHang1.Hide();
                 userCtrl_ChiPhi2.Hide();
+                userCtrl_ChiPhi2.ResetText();
                 userCtrl_CTCP2.Hide();
-                userCtrl_ReportChiPhiTheoCa1.Hide();
                 userCtrl_CDT1.Hide();
+                userCtrl_CDT_CPTC1.Hide();
+                userCtrl_ReportChiPhiTheoCa1.Hide();
+                userCtrl_TienConLaiCuoiCa1.Hide();
             }
 
         }
@@ -282,15 +316,17 @@ namespace ThuChi
                 userCtrl_ReportChiPhiTheoCa1.BringToFront();
                 userCtrl_ReportChiPhiTheoCa1.ReloadData();
 
-                userCtrl_ReportCDTTien1.Hide();
-                userCtrl_CDT_CPTC1.Hide();
-                userCtrl_Dashboard1.Hide();
                 userCtrl_DoanhThu1.Hide();
                 userCtrl_DoanhThuTheoCa1.Hide();
+                userCtrl_Dashboard1.Hide();
                 userCtrl_DTBanHang1.Hide();
                 userCtrl_ChiPhi2.Hide();
+                userCtrl_ChiPhi2.ResetText();
                 userCtrl_CTCP2.Hide();
                 userCtrl_CDT1.Hide();
+                userCtrl_CDT_CPTC1.Hide();
+                userCtrl_ReportCDTTien1.Hide();
+                userCtrl_TienConLaiCuoiCa1.Hide();
             }
 
         }

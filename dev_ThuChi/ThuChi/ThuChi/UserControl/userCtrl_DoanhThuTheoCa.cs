@@ -16,6 +16,7 @@ using System.Globalization;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Repository;
+using ThuChi.frm;
 
 namespace ThuChi.UserControl
 {
@@ -138,6 +139,11 @@ namespace ThuChi.UserControl
                 if (result==DialogResult.Yes)
                 {
                     //mở frm TienConLaiCuoiNgay
+                    using (frm_TienConLaiCuoiCa frm = new frm_TienConLaiCuoiCa())
+                    {
+                        frm.ShowDialog();
+                    }
+
                 }
             }
         }

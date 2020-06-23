@@ -52,7 +52,7 @@ namespace ThuChi
 
         private void bt_Save_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.InsertDataTienLoiCN(txt_cdtID.Text,txt_doanhthuID.Text);
+            //DataProvider.Instance.InsertDataTienLoiCN(txt_cdtID.Text,txt_doanhthuID.Text);
             ShowTienLoiCN();
         }
 
