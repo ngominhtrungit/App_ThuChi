@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ThuChi.DAO;
+using ThuChi.Class;
+using System.Globalization;
+using System.Data.SqlClient;
 
 namespace ThuChi.UserControl
 {
@@ -37,6 +40,8 @@ namespace ThuChi.UserControl
         {
             string query = "exec [dbo].[proc_ShowCDT_CPTC]";
             gridControl1.DataSource= DataProvider.Instance.ExecuteQuery(query);
+
+            DisableEditColumnsGridView.CustomEditColumnsGridView(gridView1, new int[] { 0,1,2,3,4,5 });
 
         }
 
@@ -68,6 +73,43 @@ namespace ThuChi.UserControl
             string query = "exec [dbo].[proc_insertCDTChiPhiTheoCa] @cdtID , @chiphitcID , @sotienlay ";
             DataProvider.Instance.ExecuteQuery(query,new object[] { txt_cdtID.Text,txt_chiphitcID.Text,txt_soTienLay.Text });
             LoadCTCDT_CPTC();
+        }
+
+        private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            int ctcdtID = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[0]);
+            int cdtID = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[1]);
+            int chiphitcID = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[2]);
+            string ngay = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[3]).ToString();
+            DateTime dt = DateTime.Parse(ngay, new CultureInfo("en-CA"));
+
+            string tenCa = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[4]).ToString();
+            string tenCDT = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5]).ToString();
+            float sotienlay = float.Parse(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6]).ToString());
+            try
+            {
+                if (MessageBox.Show(" Bạn có muốn Update CDT: '"+tenCDT+"' '"+dt.ToString("d/M/yyyy")+"', thuộc '"+tenCa+"' không?", "Thông Báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string query1 = "exec [dbo].[proc_UpdateCDT_CPTheoCa] @ctcdtID , @cdtID , @chiphitcID , @sotienlay ";
+                    DataProvider.Instance.ExecuteQuery(query1, new object[] { ctcdtID, cdtID, chiphitcID, sotienlay.ToString()});
+                    AutoCloseMessageBox.Show("Update CDT: '" + tenCDT + "' '" + dt.ToString("d/M/yyyy") + "', thuộc '" + tenCa + "' thành công!", "Thông Báo!!", 1000);
+                }
+                LoadCTCDT_CPTC();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi không Update CDT: '" + tenCDT + "' '" + dt.ToString("d/M/yyyy") + "', thuộc '" + tenCa + "' được! Nếu có bất kỳ thắc mắc gì vui lòng liên hệ Trung sdt: 0902669115", "Lỗi.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                gridView1.CloseEditor();
+                gridView1.UpdateCurrentRow();
+                e.Handled = true;
+            }
         }
     }
 }
