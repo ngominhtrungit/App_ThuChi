@@ -59,46 +59,48 @@
     </SqlDataSource>
   </DataSources>
   <Items>
-    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" DataSource="dashboardSqlDataSource1" DataMember="CTChiPhiTheoCa">
+    <Grid ComponentName="gridDashboardItem1" Name="Chi Tiết Theo Ngày" DataSource="dashboardSqlDataSource1" DataMember="CTChiPhiTheoCa">
       <DataItems>
-        <Dimension DataMember="ngaytaodt" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
-        <Dimension DataMember="donvitinh" DefaultId="DataItem1" />
-        <Dimension DataMember="mota" DefaultId="DataItem2" />
-        <Measure DataMember="soluong" DefaultId="DataItem3" />
-        <Measure DataMember="dongia" DefaultId="DataItem4" />
-        <Measure DataMember="thanhtien" DefaultId="DataItem5" />
-        <Dimension DataMember="tenCa" DefaultId="DataItem6" />
-        <Measure DataMember="caID" DefaultId="DataItem7" />
+        <Dimension DataMember="donvitinh" Name="Đơn Vị Tính" DefaultId="DataItem1" />
+        <Dimension DataMember="mota" Name="Mô Tả" DefaultId="DataItem2" />
+        <Measure DataMember="soluong" Name="SL" DefaultId="DataItem3">
+          <NumericFormat FormatType="General" />
+        </Measure>
+        <Measure DataMember="dongia" Name="Đơn Giá" DefaultId="DataItem4">
+          <NumericFormat FormatType="Currency" CurrencyCultureName="vi-VN" />
+        </Measure>
+        <Measure DataMember="thanhtien" Name="Thành Tiền" DefaultId="DataItem5">
+          <NumericFormat FormatType="Currency" CurrencyCultureName="vi-VN" />
+        </Measure>
+        <Dimension DataMember="tenCa" Name="Tên Ca" SortOrder="Descending" DefaultId="DataItem6" />
+        <Dimension DataMember="ngaytaodt" Name="Ngày" SortOrder="Descending" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
       </DataItems>
       <GridColumns>
-        <GridDimensionColumn Weight="132.11600429645546">
+        <GridDimensionColumn Weight="56.100720213659166">
           <Dimension DefaultId="DataItem0" />
         </GridDimensionColumn>
-        <GridMeasureColumn Weight="67.669172932330838">
-          <Measure DefaultId="DataItem7" />
-        </GridMeasureColumn>
-        <GridDimensionColumn Weight="46.401718582169721">
+        <GridDimensionColumn Weight="57.452544797120837">
           <Dimension DefaultId="DataItem6" />
         </GridDimensionColumn>
-        <GridDimensionColumn Weight="58.646616541353389">
+        <GridDimensionColumn Weight="58.8043693805825">
           <Dimension DefaultId="DataItem1" />
         </GridDimensionColumn>
-        <GridDimensionColumn Weight="52.846401718582179">
+        <GridDimensionColumn Weight="108.14596667693333">
           <Dimension DefaultId="DataItem2" />
         </GridDimensionColumn>
-        <GridMeasureColumn Weight="79.914070891514513">
+        <GridMeasureColumn Weight="24.33284250231">
           <Measure DefaultId="DataItem3" />
         </GridMeasureColumn>
-        <GridMeasureColumn Weight="76.047261009667039">
+        <GridMeasureColumn Weight="59.480281672313332">
           <Measure DefaultId="DataItem4" />
         </GridMeasureColumn>
-        <GridMeasureColumn Weight="86.358754027926977">
+        <GridMeasureColumn Weight="102.73866834308666">
           <Measure DefaultId="DataItem5" />
         </GridMeasureColumn>
       </GridColumns>
       <GridOptions ColumnWidthMode="Manual" />
     </Grid>
-    <RangeFilter ComponentName="rangeFilterDashboardItem1" Name="Range Filter 1" ShowCaption="true" DataSource="dashboardSqlDataSource1" DataMember="CTChiPhiTheoCa">
+    <RangeFilter ComponentName="rangeFilterDashboardItem1" Name="Filter theo tháng năm" ShowCaption="true" DataSource="dashboardSqlDataSource1" DataMember="CTChiPhiTheoCa">
       <DataItems>
         <Dimension DataMember="ngaytaodt" DateTimeGroupInterval="MonthYear" DefaultId="DataItem2" />
         <Measure DataMember="thanhtien" DefaultId="DataItem0" />
@@ -168,12 +170,36 @@
         </DateTimePeriod>
       </DateTimePeriods>
     </RangeFilter>
-    <Grid ComponentName="gridDashboardItem2" Name="Grid 2" DataSource="dashboardSqlDataSource1" DataMember="CTChiPhiTheoCa">
+    <Grid ComponentName="gridDashboardItem2" Name="Tổng Theo Tháng" DataSource="dashboardSqlDataSource1" DataMember="CTChiPhiTheoCa">
       <DataItems>
         <Dimension DataMember="ngaytaodt" DateTimeGroupInterval="MonthYear" DefaultId="DataItem1" />
-        <Measure DataMember="thanhtien" DefaultId="DataItem0" />
-        <Dimension DataMember="ngaytaodt" DateTimeGroupInterval="MonthYear" DefaultId="DataItem2" />
+        <Measure DataMember="thanhtien" Name="Tổng Tiền" DefaultId="DataItem0">
+          <NumericFormat FormatType="Currency" CurrencyCultureName="vi-VN" />
+        </Measure>
+        <Dimension DataMember="ngaytaodt" Name="Ngày" DateTimeGroupInterval="MonthYear" DefaultId="DataItem2" />
       </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="33" />
+                  <IconSettings IconType="DirectionalYellowSideArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="67" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
       <GridColumns>
         <GridDimensionColumn>
           <Dimension DefaultId="DataItem2" />
@@ -185,13 +211,59 @@
       <SparklineArgument DefaultId="DataItem1" />
       <GridOptions />
     </Grid>
+    <Grid ComponentName="gridDashboardItem3" Name="Tổng Theo Tháng =&gt; Tên Ca" DataSource="dashboardSqlDataSource1" DataMember="CTChiPhiTheoCa">
+      <DataItems>
+        <Dimension DataMember="ngaytaodt" DateTimeGroupInterval="MonthYear" DefaultId="DataItem0" />
+        <Dimension DataMember="tenCa" DefaultId="DataItem1" />
+        <Measure DataMember="thanhtien" DefaultId="DataItem2" />
+        <Dimension DataMember="ngaytaodt" DateTimeGroupInterval="MonthYear" DefaultId="DataItem3" />
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem2">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="33" />
+                  <IconSettings IconType="DirectionalYellowSideArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="67" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Name="Ngày">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Tên Ca">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Name="Tổng Tiền">
+          <Measure DefaultId="DataItem2" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <SparklineArgument DefaultId="DataItem3" />
+      <GridOptions />
+    </Grid>
   </Items>
   <LayoutTree>
     <LayoutGroup Orientation="Vertical" Weight="100">
-      <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="25.99388379204893" />
-      <LayoutGroup Weight="74.006116207951067">
-        <LayoutItem DashboardItem="gridDashboardItem1" Weight="74.006116207951067" />
-        <LayoutItem DashboardItem="gridDashboardItem2" Weight="74.006116207951067" />
+      <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="25.91549295774648" />
+      <LayoutGroup Weight="74.08450704225352">
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="63.364219529579472" />
+        <LayoutGroup Orientation="Vertical" Weight="36.635780470420528">
+          <LayoutItem DashboardItem="gridDashboardItem3" Weight="50" />
+          <LayoutItem DashboardItem="gridDashboardItem2" Weight="50" />
+        </LayoutGroup>
       </LayoutGroup>
     </LayoutGroup>
   </LayoutTree>

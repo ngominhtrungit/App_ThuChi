@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cb_tenCa = new System.Windows.Forms.ComboBox();
             this.date_ChoseNgaySave = new System.Windows.Forms.DateTimePicker();
-            this.txt_doanhthuID = new System.Windows.Forms.TextBox();
+            this.txt_caID = new System.Windows.Forms.TextBox();
             this.bt_Save = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -75,7 +75,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.cb_tenCa);
             this.panel2.Controls.Add(this.date_ChoseNgaySave);
-            this.panel2.Controls.Add(this.txt_doanhthuID);
+            this.panel2.Controls.Add(this.txt_caID);
             this.panel2.Controls.Add(this.bt_Save);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,8 +88,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(656, 29);
+            this.label3.Location = new System.Drawing.Point(660, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 17);
             this.label3.TabIndex = 46;
@@ -98,8 +99,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(550, 28);
+            this.label2.Location = new System.Drawing.Point(571, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 45;
@@ -108,7 +110,7 @@
             // cb_tenCa
             // 
             this.cb_tenCa.FormattingEnabled = true;
-            this.cb_tenCa.Location = new System.Drawing.Point(553, 48);
+            this.cb_tenCa.Location = new System.Drawing.Point(570, 48);
             this.cb_tenCa.Name = "cb_tenCa";
             this.cb_tenCa.Size = new System.Drawing.Size(83, 28);
             this.cb_tenCa.TabIndex = 44;
@@ -124,9 +126,9 @@
             this.date_ChoseNgaySave.TabIndex = 43;
             this.date_ChoseNgaySave.ValueChanged += new System.EventHandler(this.date_ChoseNgaySave_ValueChanged);
             // 
-            // txt_doanhthuID
+            // txt_caID
             // 
-            this.txt_doanhthuID.AutoCompleteCustomSource.AddRange(new string[] {
+            this.txt_caID.AutoCompleteCustomSource.AddRange(new string[] {
             "cp0",
             "cp1",
             "cp2",
@@ -135,15 +137,15 @@
             "cp5",
             "cp6",
             "cp7"});
-            this.txt_doanhthuID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_doanhthuID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_doanhthuID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_doanhthuID.Location = new System.Drawing.Point(447, 48);
-            this.txt_doanhthuID.Multiline = true;
-            this.txt_doanhthuID.Name = "txt_doanhthuID";
-            this.txt_doanhthuID.ReadOnly = true;
-            this.txt_doanhthuID.Size = new System.Drawing.Size(83, 28);
-            this.txt_doanhthuID.TabIndex = 42;
+            this.txt_caID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_caID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_caID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_caID.Location = new System.Drawing.Point(481, 48);
+            this.txt_caID.Multiline = true;
+            this.txt_caID.Name = "txt_caID";
+            this.txt_caID.ReadOnly = true;
+            this.txt_caID.Size = new System.Drawing.Size(83, 28);
+            this.txt_caID.TabIndex = 42;
             // 
             // bt_Save
             // 
@@ -154,6 +156,7 @@
             this.bt_Save.Size = new System.Drawing.Size(104, 34);
             this.bt_Save.TabIndex = 34;
             this.bt_Save.Text = "Save";
+            this.bt_Save.Click += new System.EventHandler(this.bt_Save_Click);
             // 
             // gridControl1
             // 
@@ -171,6 +174,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsView.AllowCellMerge = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             // 
             // userCtrl_TienConLaiCuoiCa
@@ -202,7 +206,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cb_tenCa;
         private System.Windows.Forms.DateTimePicker date_ChoseNgaySave;
-        private System.Windows.Forms.TextBox txt_doanhthuID;
+        private System.Windows.Forms.TextBox txt_caID;
         private DevExpress.XtraEditors.SimpleButton bt_Save;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;

@@ -90,6 +90,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report_CDTNhanTien));
             DevExpress.DashboardCommon.Dimension dimension2 = new DevExpress.DashboardCommon.Dimension();
             DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn1 = new DevExpress.DashboardCommon.GridDimensionColumn();
+            DevExpress.DashboardCommon.GridColumnTotal gridColumnTotal1 = new DevExpress.DashboardCommon.GridColumnTotal();
             DevExpress.DashboardCommon.Dimension dimension3 = new DevExpress.DashboardCommon.Dimension();
             DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn2 = new DevExpress.DashboardCommon.GridDimensionColumn();
             DevExpress.DashboardCommon.Dimension dimension4 = new DevExpress.DashboardCommon.Dimension();
@@ -100,18 +101,6 @@
             DevExpress.DashboardCommon.GridMeasureColumn gridMeasureColumn2 = new DevExpress.DashboardCommon.GridMeasureColumn();
             DevExpress.DashboardCommon.Measure measure5 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.GridMeasureColumn gridMeasureColumn3 = new DevExpress.DashboardCommon.GridMeasureColumn();
-            DevExpress.DashboardCommon.Dimension dimension5 = new DevExpress.DashboardCommon.Dimension();
-            DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn4 = new DevExpress.DashboardCommon.GridDimensionColumn();
-            DevExpress.DashboardCommon.Dimension dimension6 = new DevExpress.DashboardCommon.Dimension();
-            DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn5 = new DevExpress.DashboardCommon.GridDimensionColumn();
-            DevExpress.DashboardCommon.Measure measure6 = new DevExpress.DashboardCommon.Measure();
-            DevExpress.DashboardCommon.GridMeasureColumn gridMeasureColumn4 = new DevExpress.DashboardCommon.GridMeasureColumn();
-            DevExpress.DashboardCommon.Dimension dimension7 = new DevExpress.DashboardCommon.Dimension();
-            DevExpress.DashboardCommon.Dimension dimension8 = new DevExpress.DashboardCommon.Dimension();
-            DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn6 = new DevExpress.DashboardCommon.GridDimensionColumn();
-            DevExpress.DashboardCommon.Measure measure7 = new DevExpress.DashboardCommon.Measure();
-            DevExpress.DashboardCommon.GridMeasureColumn gridMeasureColumn5 = new DevExpress.DashboardCommon.GridMeasureColumn();
-            DevExpress.DashboardCommon.GridColumnTotal gridColumnTotal1 = new DevExpress.DashboardCommon.GridColumnTotal();
             DevExpress.DashboardCommon.GridItemFormatRule gridItemFormatRule1 = new DevExpress.DashboardCommon.GridItemFormatRule();
             DevExpress.DashboardCommon.FormatConditionRangeSet formatConditionRangeSet1 = new DevExpress.DashboardCommon.FormatConditionRangeSet();
             DevExpress.DashboardCommon.RangeInfo rangeInfo1 = new DevExpress.DashboardCommon.RangeInfo();
@@ -120,10 +109,42 @@
             DevExpress.DashboardCommon.IconSettings iconSettings2 = new DevExpress.DashboardCommon.IconSettings();
             DevExpress.DashboardCommon.RangeInfo rangeInfo3 = new DevExpress.DashboardCommon.RangeInfo();
             DevExpress.DashboardCommon.IconSettings iconSettings3 = new DevExpress.DashboardCommon.IconSettings();
+            DevExpress.DashboardCommon.Dimension dimension5 = new DevExpress.DashboardCommon.Dimension();
+            DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn4 = new DevExpress.DashboardCommon.GridDimensionColumn();
+            DevExpress.DashboardCommon.GridColumnTotal gridColumnTotal2 = new DevExpress.DashboardCommon.GridColumnTotal();
+            DevExpress.DashboardCommon.Dimension dimension6 = new DevExpress.DashboardCommon.Dimension();
+            DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn5 = new DevExpress.DashboardCommon.GridDimensionColumn();
+            DevExpress.DashboardCommon.Measure measure6 = new DevExpress.DashboardCommon.Measure();
+            DevExpress.DashboardCommon.GridMeasureColumn gridMeasureColumn4 = new DevExpress.DashboardCommon.GridMeasureColumn();
+            DevExpress.DashboardCommon.GridColumnTotal gridColumnTotal3 = new DevExpress.DashboardCommon.GridColumnTotal();
+            DevExpress.DashboardCommon.Dimension dimension7 = new DevExpress.DashboardCommon.Dimension();
+            DevExpress.DashboardCommon.GridItemFormatRule gridItemFormatRule2 = new DevExpress.DashboardCommon.GridItemFormatRule();
+            DevExpress.DashboardCommon.FormatConditionRangeSet formatConditionRangeSet2 = new DevExpress.DashboardCommon.FormatConditionRangeSet();
+            DevExpress.DashboardCommon.RangeInfo rangeInfo4 = new DevExpress.DashboardCommon.RangeInfo();
+            DevExpress.DashboardCommon.IconSettings iconSettings4 = new DevExpress.DashboardCommon.IconSettings();
+            DevExpress.DashboardCommon.RangeInfo rangeInfo5 = new DevExpress.DashboardCommon.RangeInfo();
+            DevExpress.DashboardCommon.IconSettings iconSettings5 = new DevExpress.DashboardCommon.IconSettings();
+            DevExpress.DashboardCommon.RangeInfo rangeInfo6 = new DevExpress.DashboardCommon.RangeInfo();
+            DevExpress.DashboardCommon.IconSettings iconSettings6 = new DevExpress.DashboardCommon.IconSettings();
+            DevExpress.DashboardCommon.Dimension dimension8 = new DevExpress.DashboardCommon.Dimension();
+            DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn6 = new DevExpress.DashboardCommon.GridDimensionColumn();
+            DevExpress.DashboardCommon.GridColumnTotal gridColumnTotal4 = new DevExpress.DashboardCommon.GridColumnTotal();
+            DevExpress.DashboardCommon.Measure measure7 = new DevExpress.DashboardCommon.Measure();
+            DevExpress.DashboardCommon.GridMeasureColumn gridMeasureColumn5 = new DevExpress.DashboardCommon.GridMeasureColumn();
+            DevExpress.DashboardCommon.GridColumnTotal gridColumnTotal5 = new DevExpress.DashboardCommon.GridColumnTotal();
+            DevExpress.DashboardCommon.GridItemFormatRule gridItemFormatRule3 = new DevExpress.DashboardCommon.GridItemFormatRule();
+            DevExpress.DashboardCommon.FormatConditionRangeSet formatConditionRangeSet3 = new DevExpress.DashboardCommon.FormatConditionRangeSet();
+            DevExpress.DashboardCommon.RangeInfo rangeInfo7 = new DevExpress.DashboardCommon.RangeInfo();
+            DevExpress.DashboardCommon.IconSettings iconSettings7 = new DevExpress.DashboardCommon.IconSettings();
+            DevExpress.DashboardCommon.RangeInfo rangeInfo8 = new DevExpress.DashboardCommon.RangeInfo();
+            DevExpress.DashboardCommon.IconSettings iconSettings8 = new DevExpress.DashboardCommon.IconSettings();
+            DevExpress.DashboardCommon.RangeInfo rangeInfo9 = new DevExpress.DashboardCommon.RangeInfo();
+            DevExpress.DashboardCommon.IconSettings iconSettings9 = new DevExpress.DashboardCommon.IconSettings();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup1 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem1 = new DevExpress.DashboardCommon.DashboardLayoutItem();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup2 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem2 = new DevExpress.DashboardCommon.DashboardLayoutItem();
+            DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup3 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem3 = new DevExpress.DashboardCommon.DashboardLayoutItem();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem4 = new DevExpress.DashboardCommon.DashboardLayoutItem();
             this.rangeFilterDashboardItem1 = new DevExpress.DashboardCommon.RangeFilterDashboardItem();
@@ -321,37 +342,39 @@
             dimension2.DataMember = "tenCDT";
             dimension2.Name = "tên CĐT";
             dimension2.SortOrder = DevExpress.DashboardCommon.DimensionSortOrder.Descending;
-            gridDimensionColumn1.Weight = 46.548608232308425D;
+            gridDimensionColumn1.Totals.AddRange(new DevExpress.DashboardCommon.GridColumnTotal[] {
+            gridColumnTotal1});
+            gridDimensionColumn1.Weight = 62.82324043844477D;
             gridDimensionColumn1.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridDimensionColumn1.AddDataItem("Dimension", dimension2);
             dimension3.DataMember = "ngaytaocp";
             dimension3.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.DayMonthYear;
             dimension3.Name = "ngày tạo chi phí";
             dimension3.SortOrder = DevExpress.DashboardCommon.DimensionSortOrder.Descending;
-            gridDimensionColumn2.Weight = 71.938758177203908D;
+            gridDimensionColumn2.Weight = 55.480264283301871D;
             gridDimensionColumn2.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridDimensionColumn2.AddDataItem("Dimension", dimension3);
             dimension4.DataMember = "tenCa";
             dimension4.Name = "tên ca";
-            gridDimensionColumn3.Weight = 66.296502633893809D;
+            gridDimensionColumn3.Weight = 66.086785396286047D;
             gridDimensionColumn3.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridDimensionColumn3.AddDataItem("Dimension", dimension4);
             measure3.DataMember = "sdtCDT";
             measure3.Name = "SĐT";
             measure3.NumericFormat.FormatType = DevExpress.DashboardCommon.DataItemNumericFormatType.General;
             measure3.SummaryType = DevExpress.DashboardCommon.SummaryType.Average;
-            gridMeasureColumn1.Weight = 101.560599779582D;
+            gridMeasureColumn1.Weight = 81.588623946032172D;
             gridMeasureColumn1.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridMeasureColumn1.AddDataItem("Measure", measure3);
             measure4.DataMember = "diachiCDT";
             measure4.Name = "địa chỉ";
             measure4.SummaryType = DevExpress.DashboardCommon.SummaryType.Count;
-            gridMeasureColumn2.Weight = 29.621841602378083D;
+            gridMeasureColumn2.Weight = 65.270899156825735D;
             gridMeasureColumn2.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridMeasureColumn2.AddDataItem("Measure", measure4);
             measure5.DataMember = "sotienlay";
             measure5.Name = "số tiền CĐT nhận";
-            gridMeasureColumn3.Weight = 84.633833149651679D;
+            gridMeasureColumn3.Weight = 69.350330354127337D;
             gridMeasureColumn3.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridMeasureColumn3.AddDataItem("Measure", measure5);
             this.gridDashboardItem1.Columns.AddRange(new DevExpress.DashboardCommon.GridColumnBase[] {
@@ -371,6 +394,25 @@
             this.gridDashboardItem1.DataItemRepository.Add(measure5, "DataItem4");
             this.gridDashboardItem1.DataMember = "ChuDauTu";
             this.gridDashboardItem1.DataSource = this.dashboardSqlDataSource1;
+            iconSettings1.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalRedDownArrow;
+            rangeInfo1.StyleSettings = iconSettings1;
+            rangeInfo1.Value = 0D;
+            iconSettings2.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalYellowSideArrow;
+            rangeInfo2.StyleSettings = iconSettings2;
+            rangeInfo2.Value = 33D;
+            iconSettings3.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalGreenArrowUp;
+            rangeInfo3.StyleSettings = iconSettings3;
+            rangeInfo3.Value = 67D;
+            formatConditionRangeSet1.RangeSet.AddRange(new DevExpress.DashboardCommon.RangeInfo[] {
+            rangeInfo1,
+            rangeInfo2,
+            rangeInfo3});
+            formatConditionRangeSet1.ValueType = DevExpress.DashboardCommon.DashboardFormatConditionValueType.Percent;
+            gridItemFormatRule1.Condition = formatConditionRangeSet1;
+            gridItemFormatRule1.DataItem = measure5;
+            gridItemFormatRule1.Name = "FormatRule 1";
+            this.gridDashboardItem1.FormatRules.AddRange(new DevExpress.DashboardCommon.GridItemFormatRule[] {
+            gridItemFormatRule1});
             this.gridDashboardItem1.GridOptions.ColumnWidthMode = DevExpress.DashboardCommon.GridColumnWidthMode.Manual;
             this.gridDashboardItem1.InteractivityOptions.IgnoreMasterFilters = false;
             this.gridDashboardItem1.Name = "Chi tiết theo ngày";
@@ -381,6 +423,8 @@
             dimension5.DataMember = "ngaytaocp";
             dimension5.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.MonthYear;
             dimension5.Name = "(Month-Year)";
+            gridDimensionColumn4.Totals.AddRange(new DevExpress.DashboardCommon.GridColumnTotal[] {
+            gridColumnTotal2});
             gridDimensionColumn4.Weight = 60.261060603721944D;
             gridDimensionColumn4.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridDimensionColumn4.AddDataItem("Dimension", dimension5);
@@ -391,6 +435,9 @@
             gridDimensionColumn5.AddDataItem("Dimension", dimension6);
             measure6.DataMember = "sotienlay";
             measure6.Name = "Số tiền CĐT nhận theo tháng filter Tên";
+            gridColumnTotal3.TotalType = DevExpress.DashboardCommon.GridColumnTotalType.Sum;
+            gridMeasureColumn4.Totals.AddRange(new DevExpress.DashboardCommon.GridColumnTotal[] {
+            gridColumnTotal3});
             gridMeasureColumn4.Weight = 51.652337660333096D;
             gridMeasureColumn4.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridMeasureColumn4.AddDataItem("Measure", measure6);
@@ -408,6 +455,25 @@
             this.gridDashboardItem2.DataItemRepository.Add(dimension5, "DataItem3");
             this.gridDashboardItem2.DataMember = "ChuDauTu";
             this.gridDashboardItem2.DataSource = this.dashboardSqlDataSource1;
+            iconSettings4.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalRedDownArrow;
+            rangeInfo4.StyleSettings = iconSettings4;
+            rangeInfo4.Value = 0D;
+            iconSettings5.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalYellowSideArrow;
+            rangeInfo5.StyleSettings = iconSettings5;
+            rangeInfo5.Value = 33D;
+            iconSettings6.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalGreenArrowUp;
+            rangeInfo6.StyleSettings = iconSettings6;
+            rangeInfo6.Value = 67D;
+            formatConditionRangeSet2.RangeSet.AddRange(new DevExpress.DashboardCommon.RangeInfo[] {
+            rangeInfo4,
+            rangeInfo5,
+            rangeInfo6});
+            formatConditionRangeSet2.ValueType = DevExpress.DashboardCommon.DashboardFormatConditionValueType.Percent;
+            gridItemFormatRule2.Condition = formatConditionRangeSet2;
+            gridItemFormatRule2.DataItem = measure6;
+            gridItemFormatRule2.Name = "FormatRule 1";
+            this.gridDashboardItem2.FormatRules.AddRange(new DevExpress.DashboardCommon.GridItemFormatRule[] {
+            gridItemFormatRule2});
             this.gridDashboardItem2.GridOptions.ColumnWidthMode = DevExpress.DashboardCommon.GridColumnWidthMode.Manual;
             this.gridDashboardItem2.InteractivityOptions.IgnoreMasterFilters = false;
             this.gridDashboardItem2.Name = "Lọc Tên theo tháng";
@@ -419,15 +485,17 @@
             dimension8.DataMember = "ngaytaocp";
             dimension8.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.MonthYear;
             dimension8.Name = "(Month-Year)";
-            gridDimensionColumn6.Weight = 64.4404332129964D;
+            gridDimensionColumn6.Totals.AddRange(new DevExpress.DashboardCommon.GridColumnTotal[] {
+            gridColumnTotal4});
+            gridDimensionColumn6.Weight = 82.3943661971831D;
             gridDimensionColumn6.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridDimensionColumn6.AddDataItem("Dimension", dimension8);
             measure7.DataMember = "sotienlay";
             measure7.Name = "Số tiền Tổng Theo tháng";
-            gridColumnTotal1.TotalType = DevExpress.DashboardCommon.GridColumnTotalType.Sum;
+            gridColumnTotal5.TotalType = DevExpress.DashboardCommon.GridColumnTotalType.Sum;
             gridMeasureColumn5.Totals.AddRange(new DevExpress.DashboardCommon.GridColumnTotal[] {
-            gridColumnTotal1});
-            gridMeasureColumn5.Weight = 85.5595667870036D;
+            gridColumnTotal5});
+            gridMeasureColumn5.Weight = 67.6056338028169D;
             gridMeasureColumn5.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridMeasureColumn5.AddDataItem("Measure", measure7);
             this.gridDashboardItem3.Columns.AddRange(new DevExpress.DashboardCommon.GridColumnBase[] {
@@ -439,25 +507,25 @@
             this.gridDashboardItem3.DataItemRepository.Add(measure7, "DataItem1");
             this.gridDashboardItem3.DataMember = "ChuDauTu";
             this.gridDashboardItem3.DataSource = this.dashboardSqlDataSource1;
-            iconSettings1.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalRedDownArrow;
-            rangeInfo1.StyleSettings = iconSettings1;
-            rangeInfo1.Value = 0D;
-            iconSettings2.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalYellowSideArrow;
-            rangeInfo2.StyleSettings = iconSettings2;
-            rangeInfo2.Value = 33D;
-            iconSettings3.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalGreenArrowUp;
-            rangeInfo3.StyleSettings = iconSettings3;
-            rangeInfo3.Value = 67D;
-            formatConditionRangeSet1.RangeSet.AddRange(new DevExpress.DashboardCommon.RangeInfo[] {
-            rangeInfo1,
-            rangeInfo2,
-            rangeInfo3});
-            formatConditionRangeSet1.ValueType = DevExpress.DashboardCommon.DashboardFormatConditionValueType.Percent;
-            gridItemFormatRule1.Condition = formatConditionRangeSet1;
-            gridItemFormatRule1.DataItem = measure7;
-            gridItemFormatRule1.Name = "FormatRule 1";
+            iconSettings7.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalRedDownArrow;
+            rangeInfo7.StyleSettings = iconSettings7;
+            rangeInfo7.Value = 0D;
+            iconSettings8.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalYellowSideArrow;
+            rangeInfo8.StyleSettings = iconSettings8;
+            rangeInfo8.Value = 33D;
+            iconSettings9.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalGreenArrowUp;
+            rangeInfo9.StyleSettings = iconSettings9;
+            rangeInfo9.Value = 67D;
+            formatConditionRangeSet3.RangeSet.AddRange(new DevExpress.DashboardCommon.RangeInfo[] {
+            rangeInfo7,
+            rangeInfo8,
+            rangeInfo9});
+            formatConditionRangeSet3.ValueType = DevExpress.DashboardCommon.DashboardFormatConditionValueType.Percent;
+            gridItemFormatRule3.Condition = formatConditionRangeSet3;
+            gridItemFormatRule3.DataItem = measure7;
+            gridItemFormatRule3.Name = "FormatRule 1";
             this.gridDashboardItem3.FormatRules.AddRange(new DevExpress.DashboardCommon.GridItemFormatRule[] {
-            gridItemFormatRule1});
+            gridItemFormatRule3});
             this.gridDashboardItem3.GridOptions.ColumnWidthMode = DevExpress.DashboardCommon.GridColumnWidthMode.Manual;
             this.gridDashboardItem3.InteractivityOptions.IgnoreMasterFilters = false;
             this.gridDashboardItem3.Name = "Tổng Theo Tháng";
@@ -473,19 +541,24 @@
             this.gridDashboardItem2,
             this.gridDashboardItem3});
             dashboardLayoutItem1.DashboardItem = this.rangeFilterDashboardItem1;
-            dashboardLayoutItem1.Weight = 30.601792573623559D;
+            dashboardLayoutItem1.Weight = 30.619684082624545D;
             dashboardLayoutItem2.DashboardItem = this.gridDashboardItem1;
-            dashboardLayoutItem2.Weight = 41.007194244604314D;
+            dashboardLayoutItem2.Weight = 60.524160524160521D;
             dashboardLayoutItem3.DashboardItem = this.gridDashboardItem2;
-            dashboardLayoutItem3.Weight = 31.449126413155192D;
+            dashboardLayoutItem3.Weight = 50.087565674255693D;
             dashboardLayoutItem4.DashboardItem = this.gridDashboardItem3;
-            dashboardLayoutItem4.Weight = 27.543679342240495D;
-            dashboardLayoutGroup2.ChildNodes.AddRange(new DevExpress.DashboardCommon.DashboardLayoutNode[] {
-            dashboardLayoutItem2,
+            dashboardLayoutItem4.Weight = 49.912434325744307D;
+            dashboardLayoutGroup3.ChildNodes.AddRange(new DevExpress.DashboardCommon.DashboardLayoutNode[] {
             dashboardLayoutItem3,
             dashboardLayoutItem4});
+            dashboardLayoutGroup3.DashboardItem = null;
+            dashboardLayoutGroup3.Orientation = DevExpress.DashboardCommon.DashboardLayoutGroupOrientation.Vertical;
+            dashboardLayoutGroup3.Weight = 39.475839475839479D;
+            dashboardLayoutGroup2.ChildNodes.AddRange(new DevExpress.DashboardCommon.DashboardLayoutNode[] {
+            dashboardLayoutItem2,
+            dashboardLayoutGroup3});
             dashboardLayoutGroup2.DashboardItem = null;
-            dashboardLayoutGroup2.Weight = 69.398207426376445D;
+            dashboardLayoutGroup2.Weight = 69.380315917375455D;
             dashboardLayoutGroup1.ChildNodes.AddRange(new DevExpress.DashboardCommon.DashboardLayoutNode[] {
             dashboardLayoutItem1,
             dashboardLayoutGroup2});
@@ -493,7 +566,7 @@
             dashboardLayoutGroup1.Orientation = DevExpress.DashboardCommon.DashboardLayoutGroupOrientation.Vertical;
             dashboardLayoutGroup1.Weight = 100D;
             this.LayoutRoot = dashboardLayoutGroup1;
-            this.Title.Text = "Dashboard";
+            this.Title.Text = "Báo Cáo CDT Nhận Tiền";
             ((System.ComponentModel.ISupportInitialize)(dimension1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure2)).EndInit();

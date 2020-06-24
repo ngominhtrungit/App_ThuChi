@@ -62,5 +62,12 @@ namespace ThuChi.UserControl
             DataProvider.Instance.ChoseComboBoxChangeTextBox_CPtcID_by_TenNgayCP(date_ChoseNgayCp.Value, cb_TenCa, txt_chiphitcID);
 
         }
+
+        private void bt_Save_Click(object sender, EventArgs e)
+        {
+            string query = "exec [dbo].[proc_insertCDTChiPhiTheoCa] @cdtID , @chiphitcID , @sotienlay ";
+            DataProvider.Instance.ExecuteQuery(query,new object[] { txt_cdtID.Text,txt_chiphitcID.Text,txt_soTienLay.Text });
+            LoadCTCDT_CPTC();
+        }
     }
 }

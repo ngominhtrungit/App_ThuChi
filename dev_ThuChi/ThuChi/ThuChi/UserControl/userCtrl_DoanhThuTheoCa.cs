@@ -90,7 +90,9 @@ namespace ThuChi.UserControl
             LoadDoanhThuTheoCa();
             AddUnboundColumn();
             AddRepository();
-            CustomCellMergeColumnGridView();
+            //CustomCellMergeColumnGridView();
+            CustomCellMergeColumnGridView customCellMergeColumnGrid = new CustomCellMergeColumnGridView(gridView1,"ngaytaodt");
+            customCellMergeColumnGrid.CellMergeColumnGridViewDTTC();
             //LoadtenCatoComboBox();
         }
 
@@ -148,22 +150,22 @@ namespace ThuChi.UserControl
             }
         }
 
-        private void CustomCellMergeColumnGridView()
-        {
-            for (int i = 0; i < gridView1.Columns.Count; i++)
-            {
-                if (gridView1.Columns[i].FieldName == "ngaytaodt")
-                {
-                    gridView1.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-                    gridView1.Columns[i-1].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-                }
-                else
-                {
-                    gridView1.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-                }
-            }
+        //private void CustomCellMergeColumnGridView()
+        //{
+        //    for (int i = 0; i < gridView1.Columns.Count; i++)
+        //    {
+        //        if (gridView1.Columns[i].FieldName == "ngaytaodt")
+        //        {
+        //            gridView1.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+        //            gridView1.Columns[i-1].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+        //        }
+        //        else
+        //        {
+        //            gridView1.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+        //        }
+        //    }
                 
-        }
+        //}
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {

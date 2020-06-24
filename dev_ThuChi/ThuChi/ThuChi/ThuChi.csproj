@@ -173,11 +173,17 @@
     <Compile Include="formBaoCao\Report_CDTNhanTien.Designer.cs">
       <DependentUpon>Report_CDTNhanTien.cs</DependentUpon>
     </Compile>
-    <Compile Include="formBaoCao\Report_ChiPhi.cs">
+    <Compile Include="formBaoCao\Report_ChiPhiTheoCa.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="formBaoCao\Report_ChiPhi.Designer.cs">
-      <DependentUpon>Report_ChiPhi.cs</DependentUpon>
+    <Compile Include="formBaoCao\Report_ChiPhiTheoCa.Designer.cs">
+      <DependentUpon>Report_ChiPhiTheoCa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formBaoCao\Report_TienConLaiCC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="formBaoCao\Report_TienConLaiCC.Designer.cs">
+      <DependentUpon>Report_TienConLaiCC.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\userCtrl_CDT.cs">
       <SubType>UserControl</SubType>
@@ -251,6 +257,12 @@
     <Compile Include="UserControl\userCtrl_ReportChiPhiTheoCa.Designer.cs">
       <DependentUpon>userCtrl_ReportChiPhiTheoCa.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\userCtrl_ReportTienConLai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\userCtrl_ReportTienConLai.Designer.cs">
+      <DependentUpon>userCtrl_ReportTienConLai.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\userCtrl_TienConLaiCuoiCa.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -263,11 +275,14 @@
     <EmbeddedResource Include="formBaoCao\Report_CDTNhanTien.resx">
       <DependentUpon>Report_CDTNhanTien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formBaoCao\Report_ChiPhi.resx">
-      <DependentUpon>Report_ChiPhi.cs</DependentUpon>
+    <EmbeddedResource Include="formBaoCao\Report_ChiPhiTheoCa.resx">
+      <DependentUpon>Report_ChiPhiTheoCa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formBaoCao\Report_DTBanHang.resx">
       <DependentUpon>Report_DTBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formBaoCao\Report_TienConLaiCC.resx">
+      <DependentUpon>Report_TienConLaiCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frm_DTTC.resx">
       <DependentUpon>frm_DTTC.cs</DependentUpon>
@@ -327,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\userCtrl_ReportChiPhiTheoCa.resx">
       <DependentUpon>userCtrl_ReportChiPhiTheoCa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\userCtrl_ReportTienConLai.resx">
+      <DependentUpon>userCtrl_ReportTienConLai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\userCtrl_TienConLaiCuoiCa.resx">
       <DependentUpon>userCtrl_TienConLaiCuoiCa.cs</DependentUpon>

@@ -685,7 +685,6 @@ D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\bin\x86\Debug\ja\DevE
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\bin\x86\Debug\ru\DevExpress.Pdf.v19.1.Core.resources.dll
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.Form1.resources
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.Report_CDTNhanTien.resources
-D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.Report_ChiPhi.resources
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.Report_DTBanHang.resources
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.frm.frm_InsertDoanhThuNgay.resources
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.frm_ChiTietChiPhi.resources
@@ -710,5 +709,8 @@ D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.pdb
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.frm.frm_DTTC.resources
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.userCtrl_TienConLaiCuoiCa.resources
-D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.csprojAssemblyReference.cache
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.frm.frm_TienConLaiCuoiCa.resources
+D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.Report_ChiPhiTheoCa.resources
+D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.csprojAssemblyReference.cache
+D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.userCtrl_ReportTienConLai.resources
+D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.Report_TienConLaiCC.resources

@@ -9,18 +9,49 @@ namespace ThuChi.Class
 {
     class CustomCellMergeColumnGridView
     {
-        public void CellMergeColumnGridView( GridView gridView )
+        GridView _gridView;
+        string _txt;
+
+        public CustomCellMergeColumnGridView()
         {
-            for (int i = 0; i < gridView.Columns.Count; i++)
+
+        }
+
+        public CustomCellMergeColumnGridView(GridView gridView, string txt)
+        {
+            this._gridView = gridView;
+            this._txt = txt;
+        }
+
+        public void CellMergeColumnGridViewDTTC()
+        {
+            for (int i = 0; i < _gridView.Columns.Count; i++)
             {
-                if (gridView.Columns[i].FieldName == "ngaytaodt")
+                if (_gridView.Columns[i].FieldName == _txt)
                 {
-                    gridView.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-                    gridView.Columns[i - 1].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+                    _gridView.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+                    _gridView.Columns[i - 1].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
                 }
                 else
                 {
-                    gridView.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+                    _gridView.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+                }
+            }
+
+        }
+
+        public void CellMergeColumnGridViewTienCC()
+        {
+            for (int i = 0; i < _gridView.Columns.Count; i++)
+            {
+                if (_gridView.Columns[i].FieldName == _txt)
+                {
+                    _gridView.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+                    //_gridView.Columns[i - 1].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+                }
+                else
+                {
+                    _gridView.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
                 }
             }
 

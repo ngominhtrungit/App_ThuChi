@@ -36,7 +36,7 @@
             this.cb_TenCa = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cb_ChoseTen = new System.Windows.Forms.ComboBox();
-            this.txt_dc = new System.Windows.Forms.TextBox();
+            this.txt_soTienLay = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_cdtID = new System.Windows.Forms.TextBox();
             this.txt_chiphitcID = new System.Windows.Forms.TextBox();
@@ -81,7 +81,7 @@
             this.panel2.Controls.Add(this.cb_TenCa);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.cb_ChoseTen);
-            this.panel2.Controls.Add(this.txt_dc);
+            this.panel2.Controls.Add(this.txt_soTienLay);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txt_cdtID);
             this.panel2.Controls.Add(this.txt_chiphitcID);
@@ -147,15 +147,15 @@
             this.cb_ChoseTen.TabIndex = 45;
             this.cb_ChoseTen.SelectedIndexChanged += new System.EventHandler(this.cb_ChoseTen_SelectedIndexChanged);
             // 
-            // txt_dc
+            // txt_soTienLay
             // 
-            this.txt_dc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dc.Location = new System.Drawing.Point(530, 142);
-            this.txt_dc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_dc.Multiline = true;
-            this.txt_dc.Name = "txt_dc";
-            this.txt_dc.Size = new System.Drawing.Size(193, 29);
-            this.txt_dc.TabIndex = 43;
+            this.txt_soTienLay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_soTienLay.Location = new System.Drawing.Point(530, 142);
+            this.txt_soTienLay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_soTienLay.Multiline = true;
+            this.txt_soTienLay.Name = "txt_soTienLay";
+            this.txt_soTienLay.Size = new System.Drawing.Size(193, 29);
+            this.txt_soTienLay.TabIndex = 43;
             // 
             // label2
             // 
@@ -208,6 +208,7 @@
             this.bt_Save.Size = new System.Drawing.Size(104, 34);
             this.bt_Save.TabIndex = 34;
             this.bt_Save.Text = "Save";
+            this.bt_Save.Click += new System.EventHandler(this.bt_Save_Click);
             // 
             // label4
             // 
@@ -275,7 +276,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txt_dc;
+        private System.Windows.Forms.TextBox txt_soTienLay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_cdtID;
         private System.Windows.Forms.TextBox txt_chiphitcID;

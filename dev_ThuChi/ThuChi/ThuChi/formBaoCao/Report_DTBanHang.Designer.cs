@@ -87,24 +87,25 @@
             DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn2 = new DevExpress.DashboardCommon.GridDimensionColumn();
             DevExpress.DashboardCommon.Measure measure3 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.GridMeasureColumn gridMeasureColumn1 = new DevExpress.DashboardCommon.GridMeasureColumn();
-            DevExpress.DashboardCommon.GridColumnTotal gridColumnTotal2 = new DevExpress.DashboardCommon.GridColumnTotal();
             DevExpress.DashboardCommon.GridItemFormatRule gridItemFormatRule1 = new DevExpress.DashboardCommon.GridItemFormatRule();
-            DevExpress.DashboardCommon.FormatConditionColorRangeBar formatConditionColorRangeBar1 = new DevExpress.DashboardCommon.FormatConditionColorRangeBar();
+            DevExpress.DashboardCommon.FormatConditionRangeSet formatConditionRangeSet1 = new DevExpress.DashboardCommon.FormatConditionRangeSet();
             DevExpress.DashboardCommon.RangeInfo rangeInfo1 = new DevExpress.DashboardCommon.RangeInfo();
-            DevExpress.DashboardCommon.BarStyleSettings barStyleSettings1 = new DevExpress.DashboardCommon.BarStyleSettings();
+            DevExpress.DashboardCommon.IconSettings iconSettings1 = new DevExpress.DashboardCommon.IconSettings();
             DevExpress.DashboardCommon.RangeInfo rangeInfo2 = new DevExpress.DashboardCommon.RangeInfo();
-            DevExpress.DashboardCommon.BarStyleSettings barStyleSettings2 = new DevExpress.DashboardCommon.BarStyleSettings();
-            DevExpress.DashboardCommon.RangeInfo rangeInfo3 = new DevExpress.DashboardCommon.RangeInfo();
-            DevExpress.DashboardCommon.BarStyleSettings barStyleSettings3 = new DevExpress.DashboardCommon.BarStyleSettings();
-            DevExpress.DashboardCommon.RangeInfo rangeInfo4 = new DevExpress.DashboardCommon.RangeInfo();
-            DevExpress.DashboardCommon.BarStyleSettings barStyleSettings4 = new DevExpress.DashboardCommon.BarStyleSettings();
-            DevExpress.DashboardCommon.RangeInfo rangeInfo5 = new DevExpress.DashboardCommon.RangeInfo();
-            DevExpress.DashboardCommon.BarStyleSettings barStyleSettings5 = new DevExpress.DashboardCommon.BarStyleSettings();
+            DevExpress.DashboardCommon.IconSettings iconSettings2 = new DevExpress.DashboardCommon.IconSettings();
             DevExpress.DashboardCommon.Dimension dimension4 = new DevExpress.DashboardCommon.Dimension();
             DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn3 = new DevExpress.DashboardCommon.GridDimensionColumn();
             DevExpress.DashboardCommon.Measure measure4 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.GridMeasureColumn gridMeasureColumn2 = new DevExpress.DashboardCommon.GridMeasureColumn();
-            DevExpress.DashboardCommon.GridColumnTotal gridColumnTotal3 = new DevExpress.DashboardCommon.GridColumnTotal();
+            DevExpress.DashboardCommon.GridColumnTotal gridColumnTotal2 = new DevExpress.DashboardCommon.GridColumnTotal();
+            DevExpress.DashboardCommon.GridItemFormatRule gridItemFormatRule2 = new DevExpress.DashboardCommon.GridItemFormatRule();
+            DevExpress.DashboardCommon.FormatConditionRangeSet formatConditionRangeSet2 = new DevExpress.DashboardCommon.FormatConditionRangeSet();
+            DevExpress.DashboardCommon.RangeInfo rangeInfo3 = new DevExpress.DashboardCommon.RangeInfo();
+            DevExpress.DashboardCommon.IconSettings iconSettings3 = new DevExpress.DashboardCommon.IconSettings();
+            DevExpress.DashboardCommon.RangeInfo rangeInfo4 = new DevExpress.DashboardCommon.RangeInfo();
+            DevExpress.DashboardCommon.IconSettings iconSettings4 = new DevExpress.DashboardCommon.IconSettings();
+            DevExpress.DashboardCommon.RangeInfo rangeInfo5 = new DevExpress.DashboardCommon.RangeInfo();
+            DevExpress.DashboardCommon.IconSettings iconSettings5 = new DevExpress.DashboardCommon.IconSettings();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup1 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem1 = new DevExpress.DashboardCommon.DashboardLayoutItem();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup2 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
@@ -289,9 +290,6 @@
             gridDimensionColumn2.AddDataItem("Dimension", dimension3);
             measure3.DataMember = "tong dt";
             gridMeasureColumn1.Name = "Tổng";
-            gridColumnTotal2.TotalType = DevExpress.DashboardCommon.GridColumnTotalType.Sum;
-            gridMeasureColumn1.Totals.AddRange(new DevExpress.DashboardCommon.GridColumnTotal[] {
-            gridColumnTotal2});
             gridMeasureColumn1.Weight = 101.59189580318382D;
             gridMeasureColumn1.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridMeasureColumn1.AddDataItem("Measure", measure3);
@@ -306,29 +304,17 @@
             this.gridDashboardItem1.DataItemRepository.Add(measure3, "DataItem2");
             this.gridDashboardItem1.DataMember = "DoanhThu";
             this.gridDashboardItem1.DataSource = this.dashboardSqlDataSource1;
-            barStyleSettings1.PredefinedColor = DevExpress.DashboardCommon.FormatConditionAppearanceType.Red;
-            rangeInfo1.StyleSettings = barStyleSettings1;
+            iconSettings1.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalRedDownArrow;
+            rangeInfo1.StyleSettings = iconSettings1;
             rangeInfo1.Value = 0D;
-            barStyleSettings2.PredefinedColor = DevExpress.DashboardCommon.FormatConditionAppearanceType.Orange;
-            rangeInfo2.StyleSettings = barStyleSettings2;
-            rangeInfo2.Value = 20D;
-            barStyleSettings3.PredefinedColor = DevExpress.DashboardCommon.FormatConditionAppearanceType.Yellow;
-            rangeInfo3.StyleSettings = barStyleSettings3;
-            rangeInfo3.Value = 40D;
-            barStyleSettings4.PredefinedColor = DevExpress.DashboardCommon.FormatConditionAppearanceType.Green;
-            rangeInfo4.StyleSettings = barStyleSettings4;
-            rangeInfo4.Value = 60D;
-            barStyleSettings5.PredefinedColor = DevExpress.DashboardCommon.FormatConditionAppearanceType.Blue;
-            rangeInfo5.StyleSettings = barStyleSettings5;
-            rangeInfo5.Value = 80D;
-            formatConditionColorRangeBar1.RangeSet.AddRange(new DevExpress.DashboardCommon.RangeInfo[] {
+            iconSettings2.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalGreenArrowUp;
+            rangeInfo2.StyleSettings = iconSettings2;
+            rangeInfo2.Value = 50D;
+            formatConditionRangeSet1.RangeSet.AddRange(new DevExpress.DashboardCommon.RangeInfo[] {
             rangeInfo1,
-            rangeInfo2,
-            rangeInfo3,
-            rangeInfo4,
-            rangeInfo5});
-            formatConditionColorRangeBar1.ValueType = DevExpress.DashboardCommon.DashboardFormatConditionValueType.Percent;
-            gridItemFormatRule1.Condition = formatConditionColorRangeBar1;
+            rangeInfo2});
+            formatConditionRangeSet1.ValueType = DevExpress.DashboardCommon.DashboardFormatConditionValueType.Percent;
+            gridItemFormatRule1.Condition = formatConditionRangeSet1;
             gridItemFormatRule1.DataItem = measure3;
             gridItemFormatRule1.Name = "FormatRule 1";
             this.gridDashboardItem1.FormatRules.AddRange(new DevExpress.DashboardCommon.GridItemFormatRule[] {
@@ -349,9 +335,9 @@
             gridDimensionColumn3.AddDataItem("Dimension", dimension4);
             measure4.DataMember = "tong dt";
             measure4.Name = "Tổng";
-            gridColumnTotal3.TotalType = DevExpress.DashboardCommon.GridColumnTotalType.Sum;
+            gridColumnTotal2.TotalType = DevExpress.DashboardCommon.GridColumnTotalType.Sum;
             gridMeasureColumn2.Totals.AddRange(new DevExpress.DashboardCommon.GridColumnTotal[] {
-            gridColumnTotal3});
+            gridColumnTotal2});
             gridMeasureColumn2.Weight = 71.531791907514446D;
             gridMeasureColumn2.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridMeasureColumn2.AddDataItem("Measure", measure4);
@@ -364,6 +350,25 @@
             this.gridDashboardItem2.DataItemRepository.Add(measure4, "DataItem1");
             this.gridDashboardItem2.DataMember = "DoanhThu";
             this.gridDashboardItem2.DataSource = this.dashboardSqlDataSource1;
+            iconSettings3.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalRedDownArrow;
+            rangeInfo3.StyleSettings = iconSettings3;
+            rangeInfo3.Value = 0D;
+            iconSettings4.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalYellowSideArrow;
+            rangeInfo4.StyleSettings = iconSettings4;
+            rangeInfo4.Value = 33D;
+            iconSettings5.IconType = DevExpress.DashboardCommon.FormatConditionIconType.DirectionalGreenArrowUp;
+            rangeInfo5.StyleSettings = iconSettings5;
+            rangeInfo5.Value = 67D;
+            formatConditionRangeSet2.RangeSet.AddRange(new DevExpress.DashboardCommon.RangeInfo[] {
+            rangeInfo3,
+            rangeInfo4,
+            rangeInfo5});
+            formatConditionRangeSet2.ValueType = DevExpress.DashboardCommon.DashboardFormatConditionValueType.Percent;
+            gridItemFormatRule2.Condition = formatConditionRangeSet2;
+            gridItemFormatRule2.DataItem = measure4;
+            gridItemFormatRule2.Name = "FormatRule 1";
+            this.gridDashboardItem2.FormatRules.AddRange(new DevExpress.DashboardCommon.GridItemFormatRule[] {
+            gridItemFormatRule2});
             this.gridDashboardItem2.GridOptions.ColumnWidthMode = DevExpress.DashboardCommon.GridColumnWidthMode.Manual;
             this.gridDashboardItem2.InteractivityOptions.IgnoreMasterFilters = false;
             this.gridDashboardItem2.Name = "Tổng theo Tháng";
@@ -395,7 +400,7 @@
             dashboardLayoutGroup1.Orientation = DevExpress.DashboardCommon.DashboardLayoutGroupOrientation.Vertical;
             dashboardLayoutGroup1.Weight = 100D;
             this.LayoutRoot = dashboardLayoutGroup1;
-            this.Title.Text = "Dashboard";
+            this.Title.Text = "Doanh thu Bán Hàng và Dịch Vụ";
             ((System.ComponentModel.ISupportInitialize)(dimension1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure2)).EndInit();

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.date_ChoseNgaySave = new System.Windows.Forms.DateTimePicker();
             this.txt_doanhthuID = new System.Windows.Forms.TextBox();
             this.bt_Save = new DevExpress.XtraEditors.SimpleButton();
@@ -37,8 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -60,6 +60,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1159, 106);
             this.panel2.TabIndex = 34;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(518, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 17);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Tên Ca:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(521, 52);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 44;
             // 
             // date_ChoseNgaySave
             // 
@@ -85,7 +103,7 @@
             this.txt_doanhthuID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txt_doanhthuID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_doanhthuID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_doanhthuID.Location = new System.Drawing.Point(299, 56);
+            this.txt_doanhthuID.Location = new System.Drawing.Point(322, 52);
             this.txt_doanhthuID.Multiline = true;
             this.txt_doanhthuID.Name = "txt_doanhthuID";
             this.txt_doanhthuID.Size = new System.Drawing.Size(193, 28);
@@ -106,7 +124,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(175, 62);
+            this.label5.Location = new System.Drawing.Point(216, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 17);
             this.label5.TabIndex = 20;
@@ -150,24 +168,6 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(521, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 44;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(518, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
-            this.label2.TabIndex = 45;
-            this.label2.Text = "Tên Ca:";
             // 
             // userCtrl_DoanhThuThucCN
             // 
