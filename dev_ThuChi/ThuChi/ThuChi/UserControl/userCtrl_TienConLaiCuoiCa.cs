@@ -38,6 +38,8 @@ namespace ThuChi.UserControl
             {
                 gridView1.Columns[2].DisplayFormat.FormatType = FormatType.DateTime;
                 gridView1.Columns[2].DisplayFormat.FormatString = "d/M/yyyy";
+                gridView1.Columns[4].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                gridView1.Columns[4].DisplayFormat.FormatString = "n0";
             }
 
             DisableEditColumnsGridView.CustomEditColumnsGridView(gridView1, new int[] {0,1,2,3,4 });

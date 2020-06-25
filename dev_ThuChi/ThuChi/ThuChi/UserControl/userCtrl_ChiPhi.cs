@@ -30,7 +30,8 @@ namespace ThuChi
         private void userCtrl_ChiPhi_Load(object sender, EventArgs e)
         {
             LoadDataChiPhi();
-
+            CustomCellMergeColumnGridView customCellMergeColumnGrid = new CustomCellMergeColumnGridView(gridView1, "ngaytaocp");
+            customCellMergeColumnGrid.CellMergeColumnGridViewChiPhiGV1();//dùng lại của Tiền Cuối ca vì chỉ merge 1 ô
             //add button into gridview
             AddUnboundColumn();
             AddRepository();
@@ -57,8 +58,9 @@ namespace ThuChi
                 gridView1.Columns[2].DisplayFormat.FormatType = FormatType.DateTime;
                 gridView1.Columns[2].DisplayFormat.FormatString = "d/M/yyyy";
             }
-            DisableEditColumnsGridView.CustomEditColumnsGridView(gridView1, new int[] { 0, 1, 2 ,3});
 
+
+            DisableEditColumnsGridView.CustomEditColumnsGridView(gridView1, new int[] { 0, 1, 2, 3 });
         }
 
         #region Add button xóa into gridview
@@ -84,7 +86,7 @@ namespace ThuChi
                 if (MessageBox.Show("Xóa Chi phí ID " + id + ", thuộc ngày " + dt.ToString("d/M/yyyy"), "Thông Báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     string query = "exec [dbo].[proc_DeleteChiPhiTheoCa] @chiphitcID ";
-                    DataProvider.Instance.ExecuteQuery(query,new object[] { id });
+                    DataProvider.Instance.ExecuteQuery(query, new object[] { id });
                     LoadDataChiPhi();
                 }
             }
@@ -157,7 +159,16 @@ namespace ThuChi
 
                 string query = "exec proc_ShowCTCP_by_chiphiID @chiphitcID='" + id + "'";
                 gridControl2.DataSource = DataProvider.Instance.ExecuteQuery(query);
+                if (gridView2.Columns.Count > 1)
+                {
+                    gridView2.Columns[2].DisplayFormat.FormatType = FormatType.DateTime;
+                    gridView2.Columns[2].DisplayFormat.FormatString = "d/M/yyyy";
 
+                    gridView2.Columns[7].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                    gridView2.Columns[7].DisplayFormat.FormatString = "n0";
+                    gridView2.Columns[8].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                    gridView2.Columns[8].DisplayFormat.FormatString = "n0";
+                }
             }
             catch (SqlException ex)
             {

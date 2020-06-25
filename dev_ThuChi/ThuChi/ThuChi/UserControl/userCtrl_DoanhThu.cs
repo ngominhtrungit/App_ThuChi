@@ -83,7 +83,17 @@ namespace ThuChi.UserControl
             {
                 string query = "exec proc_ShowDoanhThuTheoCa_by_doanhthuID @doanhthuID='" + id + "'";
                 gridControl2.DataSource = DataProvider.Instance.ExecuteQuery(query);
-
+                if (gridView2.Columns.Count > 1)
+                {
+                    gridView2.Columns[2].DisplayFormat.FormatType = FormatType.DateTime;
+                    gridView2.Columns[2].DisplayFormat.FormatString = "d/M/yyyy";
+                    gridView2.Columns[4].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                    gridView2.Columns[4].DisplayFormat.FormatString = "n0";
+                    gridView2.Columns[5].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                    gridView2.Columns[5].DisplayFormat.FormatString = "n0";
+                    gridView2.Columns[6].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                    gridView2.Columns[6].DisplayFormat.FormatString = "n0";
+                }
 
             }
             catch (SqlException ex)

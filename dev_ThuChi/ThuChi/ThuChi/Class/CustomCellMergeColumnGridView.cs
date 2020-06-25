@@ -56,5 +56,22 @@ namespace ThuChi.Class
             }
 
         }
+
+        public void CellMergeColumnGridViewChiPhiGV1()
+        {
+            for (int i = 0; i < _gridView.Columns.Count; i++)
+            {
+                if (_gridView.Columns[i].FieldName == _txt)
+                {
+                    _gridView.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+                    //_gridView.Columns[i - 1].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+                }
+                else
+                {
+                    _gridView.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+                }
+            }
+
+        }
     }
 }

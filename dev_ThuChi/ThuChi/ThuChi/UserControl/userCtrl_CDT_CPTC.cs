@@ -14,6 +14,8 @@ using System.Globalization;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.Utils;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Columns;
 
 namespace ThuChi.UserControl
 {
@@ -35,11 +37,16 @@ namespace ThuChi.UserControl
         {
             LoadCTCDT_CPTC();
             LoadTenCDTtoComboBox();
+
+            AddUnboundColumn();
+            AddRepository();
         }
 
 
         public void LoadCTCDT_CPTC()
         {
+            
+
             string query = "exec [dbo].[proc_ShowCDT_CPTC]";
             gridControl1.DataSource= DataProvider.Instance.ExecuteQuery(query);
 
@@ -48,12 +55,22 @@ namespace ThuChi.UserControl
             //for mat số tiền lấy thành vnd
             if (gridView1.Columns.Count > 1)
             {
-                gridView1.Columns[6].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-                gridView1.Columns[6].DisplayFormat.FormatString = "#,###";
+                gridView1.Columns[6].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                gridView1.Columns[6].DisplayFormat.FormatString = "n0";
                 //string a = double.Parse("12345").ToString("#,###", cultureInfo.NumberFormat);
             }
             DisableEditColumnsGridView.CustomEditColumnsGridView(gridView1, new int[] { 0,1,2,3,4,5 });
 
+        }
+
+        private void ClearDataInout()
+        {
+            txt_cdtID.Clear();
+            cb_ChoseTen.Text = "";
+            txt_chiphitcID.Clear();
+            cb_TenCa.Items.Clear();
+            txt_soTienLay.Clear();
+            date_ChoseNgayCp.Value = DateTime.Now;
         }
 
         private void LoadTenCDTtoComboBox()
@@ -81,9 +98,39 @@ namespace ThuChi.UserControl
 
         private void bt_Save_Click(object sender, EventArgs e)
         {
-            string query = "exec [dbo].[proc_insertCDTChiPhiTheoCa] @cdtID , @chiphitcID , @sotienlay ";
-            DataProvider.Instance.ExecuteQuery(query,new object[] { txt_cdtID.Text,txt_chiphitcID.Text,txt_soTienLay.Text });
-            LoadCTCDT_CPTC();
+            try
+            {
+                if (txt_cdtID.Text!="" && txt_chiphitcID.Text!="" && txt_soTienLay.Text!="")
+                {
+                    string query = "exec [dbo].[proc_insertCDTChiPhiTheoCa] @cdtID , @chiphitcID , @sotienlay ";
+                    DataProvider.Instance.ExecuteQuery(query, new object[] { txt_cdtID.Text, txt_chiphitcID.Text, txt_soTienLay.Text });
+                    LoadCTCDT_CPTC();
+                    ClearDataInout();
+                }
+                else if(txt_cdtID.Text == "")
+                {
+                    MessageBox.Show("Bạn phải chọn tên CĐT, không được bỏ trống!");
+                    txt_cdtID.Select();
+                    return;
+                }
+                else if (txt_chiphitcID.Text == "")
+                {
+                    MessageBox.Show("Bạn phải chọn ngày và tên ca, không được bỏ trống!");
+                    txt_chiphitcID.Select();
+                    return;
+                }
+                else //if (txt_soTienLay.Text == "")
+                {
+                    MessageBox.Show("Bạn phải nhập vào số tiền lấy, không được bỏ trống!");
+                    txt_soTienLay.Select();
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("lỗi trùng");
+            }
+            
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -138,5 +185,49 @@ namespace ThuChi.UserControl
                 }
             }
         }
+
+        #region Add button xóa into gridview
+        private void AddRepository()
+        {
+
+            RepositoryItemButtonEdit edit = new RepositoryItemButtonEdit();
+            edit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            edit.Appearance.BackColor = ColorTranslator.FromHtml("#B2D6ea");
+            edit.ButtonClick += edit_ButtonClick;
+            edit.Buttons[0].Caption = "Xóa";
+            edit.Buttons[0].Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph;
+            gridView1.Columns["Button"].ColumnEdit = edit;
+        }
+
+        void edit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            string id = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[0]).ToString();
+            string tenCDT = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5]).ToString();
+            string ngay = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[3]).ToString();
+            DateTime dt = DateTime.Parse(ngay, new CultureInfo("en-CA"));
+            try
+            {
+                if (MessageBox.Show("Xóa '"+tenCDT+"', ngày '"+ dt.ToString("d/M/yyyy") + "' ?", "Thông Báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string query = "exec [dbo].[proc_DeleteCDT_CPTheoCa] @ctcdtID ";
+                    DataProvider.Instance.ExecuteQuery(query,new object[] { id });
+                    AutoCloseMessageBox.Show("Xóa '" + tenCDT + "', ngày '" + dt.ToString("d/M/yyyy") + "' Thành công!", "Thông Báo!", 2500);
+                    LoadCTCDT_CPTC();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi không xóa được" + id + ",! Nếu có bất kỳ thắc mắc gì vui lòng liên hệ Trung sdt: 0902669115", "Lỗi.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void AddUnboundColumn()
+        {
+            GridColumn unbColumn = gridView1.Columns.AddField("Button");
+            unbColumn.VisibleIndex = gridView1.Columns.Count;
+            unbColumn.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+        }
+        #endregion
     }
 }

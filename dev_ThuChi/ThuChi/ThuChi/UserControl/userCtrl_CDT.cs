@@ -184,5 +184,39 @@ namespace ThuChi
                 e.Handled = true;
             }
         }
+
+        private void gridView2_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            int ctcdtID = (int)gridView2.GetRowCellValue(e.RowHandle, gridView2.Columns[0]);
+            int cdtID = (int)gridView2.GetRowCellValue(e.RowHandle, gridView2.Columns[1]);
+            int chiphitcID = (int)gridView2.GetRowCellValue(e.RowHandle, gridView2.Columns[2]);
+            string tenCDT = gridView2.GetRowCellValue(e.RowHandle, gridView2.Columns[5]).ToString();
+            float sotienlay = float.Parse(gridView2.GetRowCellValue(e.RowHandle, gridView2.Columns[6]).ToString());
+            DialogResult res = MessageBox.Show("update so tiền:'" + sotienlay.ToString() + "' của tênCDT: '" + tenCDT + "'?", "Thông Báo!", MessageBoxButtons.YesNo);
+            try
+            {
+                if (res == DialogResult.Yes)
+                {
+                    string query1 = "exec [dbo].[proc_UpdateCDT_CPTheoCa] @ctcdtID , @cdtID , @chiphitcID , @sotienlay ";
+                    DataProvider.Instance.ExecuteQuery(query1, new object[] { ctcdtID, cdtID, chiphitcID, sotienlay.ToString() });
+                    AutoCloseMessageBox.Show("Update so tiền:'" + sotienlay.ToString() + "' của tênCDT: '" + tenCDT + "' Thành công!", "Thông Báo!!", 1000);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi không so tiền:'" + sotienlay.ToString() + "' của tênCDT: '" + tenCDT + "'?, Nếu có bất kỳ thắc mắc gì vui lòng liên hệ Trung sdt: 0902669115", "Lỗi.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gridView2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                gridView2.CloseEditor();
+                gridView2.UpdateCurrentRow();
+                e.Handled = true;
+            }
+        }
     }
 }
