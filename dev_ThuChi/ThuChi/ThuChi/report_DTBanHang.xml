@@ -66,39 +66,36 @@
   <Items>
     <Grid ComponentName="gridDashboardItem1" Name="Chi tiết theo ngày" DataSource="dashboardSqlDataSource1" DataMember="DoanhThu">
       <DataItems>
-        <Dimension DataMember="DoanhThu_ngaytaodt" Name="Ngày tạo Doanh Thu (Month-Days-Year)" SortOrder="Descending" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
+        <Dimension DataMember="DoanhThu_ngaytaodt" Name="Ngày tạo Doanh Thu" SortOrder="Descending" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
         <Dimension DataMember="tenCa" Name="Tên Ca" DefaultId="DataItem1" />
-        <Measure DataMember="tong dt" DefaultId="DataItem2" />
+        <Measure DataMember="tong dt" DefaultId="DataItem2">
+          <NumericFormat FormatType="Currency" CurrencyCultureName="vi-VN" />
+        </Measure>
       </DataItems>
       <FormatRules>
         <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem2">
-          <FormatConditionColorRangeBar ValueType="Percent">
+          <FormatConditionRangeSet ValueType="Percent">
             <RangeSet>
               <Ranges>
                 <RangeInfo>
                   <Value Type="System.Double" Value="0" />
-                  <BarStyleSettings PredefinedColor="Red" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
                 </RangeInfo>
                 <RangeInfo>
-                  <Value Type="System.Double" Value="20" />
-                  <BarStyleSettings PredefinedColor="Orange" />
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="DirectionalYellowDownInclineArrow" />
                 </RangeInfo>
                 <RangeInfo>
-                  <Value Type="System.Double" Value="40" />
-                  <BarStyleSettings PredefinedColor="Yellow" />
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="DirectionalYellowUpInclineArrow" />
                 </RangeInfo>
                 <RangeInfo>
-                  <Value Type="System.Double" Value="60" />
-                  <BarStyleSettings PredefinedColor="Green" />
-                </RangeInfo>
-                <RangeInfo>
-                  <Value Type="System.Double" Value="80" />
-                  <BarStyleSettings PredefinedColor="Blue" />
+                  <Value Type="System.Double" Value="75" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
                 </RangeInfo>
               </Ranges>
             </RangeSet>
-            <BarOptions />
-          </FormatConditionColorRangeBar>
+          </FormatConditionRangeSet>
         </GridItemFormatRule>
       </FormatRules>
       <GridColumns>
@@ -197,17 +194,88 @@
     <Grid ComponentName="gridDashboardItem2" Name="Tổng theo Tháng" DataSource="dashboardSqlDataSource1" DataMember="DoanhThu">
       <DataItems>
         <Dimension DataMember="DoanhThu_ngaytaodt" Name="Ngày tạo Doanh Thu (Month-Year)" SortOrder="Descending" DateTimeGroupInterval="MonthYear" DefaultId="DataItem0" />
-        <Measure DataMember="tong dt" Name="Tổng" DefaultId="DataItem1" />
+        <Measure DataMember="tong dt" Name="Tổng" DefaultId="DataItem1">
+          <NumericFormat FormatType="Currency" CurrencyCultureName="vi-VN" />
+        </Measure>
       </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem1">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="DirectionalYellowDownInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="DirectionalYellowUpInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="75" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
       <GridColumns>
-        <GridDimensionColumn Weight="78.468208092485554">
+        <GridDimensionColumn Name="Tháng Năm" Weight="78.468208092485554">
           <Dimension DefaultId="DataItem0" />
+          <Totals>
+            <Total />
+          </Totals>
         </GridDimensionColumn>
         <GridMeasureColumn Weight="71.531791907514446">
           <Measure DefaultId="DataItem1" />
-          <Totals>
-            <Total Type="Sum" />
-          </Totals>
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <Grid ComponentName="gridDashboardItem3" Name="Tổng theo Năm" DataSource="dashboardSqlDataSource1" DataMember="DoanhThu">
+      <DataItems>
+        <Dimension DataMember="DoanhThu_ngaytaodt" DefaultId="DataItem0" />
+        <Measure DataMember="tong dt" DefaultId="DataItem1">
+          <NumericFormat FormatType="Currency" CurrencyCultureName="vi-VN" />
+        </Measure>
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem1">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="DirectionalYellowDownInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="DirectionalYellowUpInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="75" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Name="Năm" Weight="95.717344753747327">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Name="Tổng" Weight="54.282655246252673">
+          <Measure DefaultId="DataItem1" />
         </GridMeasureColumn>
       </GridColumns>
       <GridOptions ColumnWidthMode="Manual" />
@@ -217,8 +285,11 @@
     <LayoutGroup Orientation="Vertical" Weight="100">
       <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="40.422535211267608" />
       <LayoutGroup Weight="59.577464788732392">
-        <LayoutItem DashboardItem="gridDashboardItem1" Weight="49.964362081254457" />
-        <LayoutItem DashboardItem="gridDashboardItem2" Weight="50.035637918745543" />
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="66.001425516749819" />
+        <LayoutGroup Orientation="Vertical" Weight="33.998574483250181">
+          <LayoutItem DashboardItem="gridDashboardItem2" Weight="43.026004728132385" />
+          <LayoutItem DashboardItem="gridDashboardItem3" Weight="56.973995271867615" />
+        </LayoutGroup>
       </LayoutGroup>
     </LayoutGroup>
   </LayoutTree>

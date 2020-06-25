@@ -104,6 +104,12 @@ namespace ThuChi.UserControl
             {
                 gridView1.Columns[2].DisplayFormat.FormatType = FormatType.DateTime;
                 gridView1.Columns[2].DisplayFormat.FormatString = "d/M/yyyy";
+                gridView1.Columns[4].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                gridView1.Columns[4].DisplayFormat.FormatString = "n0";
+                gridView1.Columns[5].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                gridView1.Columns[5].DisplayFormat.FormatString = "n0";
+                gridView1.Columns[6].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                gridView1.Columns[6].DisplayFormat.FormatString = "n0";
             }
             
             //CustomCellMergeColumnGridView();

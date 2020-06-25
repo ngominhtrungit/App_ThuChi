@@ -683,7 +683,6 @@ D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\bin\x86\Debug\es\DevE
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\bin\x86\Debug\ja\DevExpress.Pdf.v19.1.Core.resources.dll
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\bin\x86\Debug\ru\DevExpress.Pdf.v19.1.Core.resources.dll
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.Form1.resources
-D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.Report_CDTNhanTien.resources
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.Report_DTBanHang.resources
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.frm.frm_InsertDoanhThuNgay.resources
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.frm_ChiTietChiPhi.resources
@@ -720,3 +719,4 @@ D:\Github Clone\New folder\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\Thu
 D:\Github Clone\New folder\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.frm.frm_TienConLaiCuoiCa.resources
 D:\Github Clone\New folder\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.userCtrl_ReportTienConLai.resources
 D:\Github Clone\New folder\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.userCtrl_TienConLaiCuoiCa.resources
+D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.Report_CDT_NhanTien.resources

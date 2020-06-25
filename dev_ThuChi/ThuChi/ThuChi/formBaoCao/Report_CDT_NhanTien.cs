@@ -8,9 +8,9 @@ using DevExpress.DashboardCommon;
 
 namespace ThuChi.UserControl
 {
-    public partial class Report_CDTNhanTien : DevExpress.DashboardCommon.Dashboard
+    public partial class Report_CDT_NhanTien : DevExpress.DashboardCommon.Dashboard
     {
-        public Report_CDTNhanTien()
+        public Report_CDT_NhanTien()
         {
             InitializeComponent();
         }

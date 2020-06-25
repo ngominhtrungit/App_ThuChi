@@ -37,7 +37,7 @@
             // 
             this.dashboardViewer1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(242)))));
             this.dashboardViewer1.Appearance.Options.UseBackColor = true;
-            this.dashboardViewer1.DashboardSource = typeof(ThuChi.UserControl.Report_CDTNhanTien);
+            this.dashboardViewer1.DashboardSource = typeof(ThuChi.UserControl.Report_CDT_NhanTien);
             this.dashboardViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardViewer1.Location = new System.Drawing.Point(0, 0);
             this.dashboardViewer1.Name = "dashboardViewer1";

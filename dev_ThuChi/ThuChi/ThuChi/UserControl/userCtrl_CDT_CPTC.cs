@@ -12,6 +12,8 @@ using ThuChi.DAO;
 using ThuChi.Class;
 using System.Globalization;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.Utils;
 
 namespace ThuChi.UserControl
 {
@@ -41,6 +43,15 @@ namespace ThuChi.UserControl
             string query = "exec [dbo].[proc_ShowCDT_CPTC]";
             gridControl1.DataSource= DataProvider.Instance.ExecuteQuery(query);
 
+            CultureInfo cultureInfo = new CultureInfo("vi-VN");
+
+            //for mat số tiền lấy thành vnd
+            if (gridView1.Columns.Count > 1)
+            {
+                gridView1.Columns[6].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+                gridView1.Columns[6].DisplayFormat.FormatString = "#,###";
+                //string a = double.Parse("12345").ToString("#,###", cultureInfo.NumberFormat);
+            }
             DisableEditColumnsGridView.CustomEditColumnsGridView(gridView1, new int[] { 0,1,2,3,4,5 });
 
         }
@@ -109,6 +120,22 @@ namespace ThuChi.UserControl
                 gridView1.CloseEditor();
                 gridView1.UpdateCurrentRow();
                 e.Handled = true;
+            }
+        }
+
+        private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string priority = View.GetRowCellDisplayText(e.RowHandle, View.Columns["sotienlay"]).ToString();
+                float cv = float.Parse(priority);
+                if (cv > 5000000)
+                {
+                    // if thỏa dk thì thêm RGB 
+                    e.Appearance.BackColor = Color.FromArgb(150, Color.LightCoral);
+                    e.Appearance.BackColor2 = Color.Pink;
+                }
             }
         }
     }

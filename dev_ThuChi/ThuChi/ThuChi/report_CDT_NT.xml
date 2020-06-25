@@ -62,33 +62,64 @@
   <Items>
     <Grid ComponentName="gridDashboardItem1" Name="Chi tiết theo ngày" DataSource="dashboardSqlDataSource1" DataMember="ChuDauTu">
       <DataItems>
-        <Dimension DataMember="ngaytaocp" Name="ngày tạo chi phí" SortOrder="Descending" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
         <Measure DataMember="sdtCDT" Name="SĐT" DefaultId="DataItem2">
           <NumericFormat FormatType="General" />
         </Measure>
-        <Dimension DataMember="tenCa" Name="tên ca" DefaultId="DataItem5" />
         <Dimension DataMember="tenCDT" Name="tên CĐT" SortOrder="Descending" DefaultId="DataItem1" />
         <Measure DataMember="diachiCDT" Name="địa chỉ" SummaryType="Min" DefaultId="DataItem3" />
-        <Measure DataMember="sotienlay" Name="số tiền CĐT nhận" DefaultId="DataItem4" />
+        <Dimension DataMember="ngaytaocp" Name="ngày tạo chi phí" SortOrder="Descending" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
+        <Dimension DataMember="tenCa" Name="tên ca" DefaultId="DataItem5" />
+        <Measure DataMember="sotienlay" Name="số tiền CĐT nhận" DefaultId="DataItem4">
+          <NumericFormat FormatType="Currency" CurrencyCultureName="vi-VN" />
+        </Measure>
       </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem4">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="DirectionalYellowDownInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="DirectionalYellowUpInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="75" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
       <GridColumns>
+        <GridDimensionColumn Weight="66.899654133296011">
+          <Dimension DefaultId="DataItem0" />
+          <Totals>
+            <Total />
+          </Totals>
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="68.88271032055215">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
         <GridDimensionColumn Weight="52.995467073224269">
           <Dimension DefaultId="DataItem1" />
-        </GridDimensionColumn>
-        <GridDimensionColumn Weight="66.1018729085378">
-          <Dimension DefaultId="DataItem0" />
-        </GridDimensionColumn>
-        <GridDimensionColumn Weight="56.984373197015344">
-          <Dimension DefaultId="DataItem5" />
         </GridDimensionColumn>
         <GridMeasureColumn Weight="55.274842001104886">
           <Measure DefaultId="DataItem2" />
         </GridMeasureColumn>
+        <GridMeasureColumn Weight="68.755065324590831">
+          <Measure DefaultId="DataItem4" />
+        </GridMeasureColumn>
         <GridMeasureColumn Weight="99.722653094776845">
           <Measure DefaultId="DataItem3" />
-        </GridMeasureColumn>
-        <GridMeasureColumn Weight="69.520935300358715">
-          <Measure DefaultId="DataItem4" />
         </GridMeasureColumn>
       </GridColumns>
       <GridOptions ColumnWidthMode="Manual" />
@@ -198,8 +229,34 @@
         <Measure DataMember="sotienlay" Name="Số tiền CĐT nhận theo tháng filter Tên" DefaultId="DataItem2" />
         <Dimension DataMember="ngaytaocp" Name="(Month-Year)" DateTimeGroupInterval="MonthYear" DefaultId="DataItem3" />
       </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem2">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="DirectionalYellowDownInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="DirectionalYellowUpInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="75" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
       <GridColumns>
-        <GridDimensionColumn Weight="68.680445151033382">
+        <GridDimensionColumn Name="Tháng Năm" Weight="68.680445151033382">
           <Dimension DefaultId="DataItem3" />
         </GridDimensionColumn>
         <GridDimensionColumn Weight="47.575516693163749">
@@ -207,6 +264,9 @@
         </GridDimensionColumn>
         <GridMeasureColumn Weight="108.74403815580286">
           <Measure DefaultId="DataItem2" />
+          <Totals>
+            <Total Type="Sum" />
+          </Totals>
         </GridMeasureColumn>
       </GridColumns>
       <SparklineArgument DefaultId="DataItem0" />
@@ -214,7 +274,7 @@
     </Grid>
     <Grid ComponentName="gridDashboardItem3" Name="Tổng Theo Tháng" DataSource="dashboardSqlDataSource1" DataMember="ChuDauTu">
       <DataItems>
-        <Dimension DataMember="ngaytaocp" Name="(Month-Year)" DateTimeGroupInterval="MonthYear" DefaultId="DataItem0" />
+        <Dimension DataMember="ngaytaocp" Name="Năm" DefaultId="DataItem0" />
         <Measure DataMember="sotienlay" Name="Số tiền Tổng Theo tháng" DefaultId="DataItem1" />
       </DataItems>
       <FormatRules>
@@ -227,11 +287,15 @@
                   <IconSettings IconType="DirectionalRedDownArrow" />
                 </RangeInfo>
                 <RangeInfo>
-                  <Value Type="System.Double" Value="33" />
-                  <IconSettings IconType="DirectionalYellowSideArrow" />
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="DirectionalYellowDownInclineArrow" />
                 </RangeInfo>
                 <RangeInfo>
-                  <Value Type="System.Double" Value="67" />
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="DirectionalYellowUpInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="75" />
                   <IconSettings IconType="DirectionalGreenArrowUp" />
                 </RangeInfo>
               </Ranges>
@@ -240,26 +304,28 @@
         </GridItemFormatRule>
       </FormatRules>
       <GridColumns>
-        <GridDimensionColumn>
+        <GridDimensionColumn Weight="81.370656370656377">
           <Dimension DefaultId="DataItem0" />
         </GridDimensionColumn>
-        <GridMeasureColumn>
+        <GridMeasureColumn Weight="68.629343629343623">
           <Measure DefaultId="DataItem1" />
           <Totals>
             <Total Type="Sum" />
           </Totals>
         </GridMeasureColumn>
       </GridColumns>
-      <GridOptions />
+      <GridOptions ColumnWidthMode="Manual" />
     </Grid>
   </Items>
   <LayoutTree>
     <LayoutGroup Orientation="Vertical" Weight="100">
       <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="30.56338028169014" />
-      <LayoutItem DashboardItem="gridDashboardItem1" Weight="36.338028169014088" />
-      <LayoutGroup Weight="33.098591549295776">
-        <LayoutItem DashboardItem="gridDashboardItem2" Weight="49.964362081254457" />
-        <LayoutItem DashboardItem="gridDashboardItem3" Weight="50.035637918745543" />
+      <LayoutGroup Weight="69.436619718309856">
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="62.437633642195294" />
+        <LayoutGroup Orientation="Vertical" Weight="37.562366357804706">
+          <LayoutItem DashboardItem="gridDashboardItem2" Weight="50.101419878296149" />
+          <LayoutItem DashboardItem="gridDashboardItem3" Weight="49.898580121703851" />
+        </LayoutGroup>
       </LayoutGroup>
     </LayoutGroup>
   </LayoutTree>

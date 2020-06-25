@@ -167,11 +167,11 @@
     <Compile Include="formBaoCao\Report_DTBanHang.Designer.cs">
       <DependentUpon>Report_DTBanHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="formBaoCao\Report_CDTNhanTien.cs">
+    <Compile Include="formBaoCao\Report_CDT_NhanTien.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="formBaoCao\Report_CDTNhanTien.Designer.cs">
-      <DependentUpon>Report_CDTNhanTien.cs</DependentUpon>
+    <Compile Include="formBaoCao\Report_CDT_NhanTien.Designer.cs">
+      <DependentUpon>Report_CDT_NhanTien.cs</DependentUpon>
     </Compile>
     <Compile Include="formBaoCao\Report_ChiPhiTheoCa.cs">
       <SubType>Component</SubType>
@@ -272,8 +272,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formBaoCao\Report_CDTNhanTien.resx">
-      <DependentUpon>Report_CDTNhanTien.cs</DependentUpon>
+    <EmbeddedResource Include="formBaoCao\Report_CDT_NhanTien.resx">
+      <DependentUpon>Report_CDT_NhanTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formBaoCao\Report_ChiPhiTheoCa.resx">
       <DependentUpon>Report_ChiPhiTheoCa.cs</DependentUpon>

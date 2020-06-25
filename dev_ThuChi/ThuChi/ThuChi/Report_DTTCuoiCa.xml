@@ -65,9 +65,38 @@
         <Measure DataMember="tienconlaitheoca" DefaultId="DataItem2" />
         <Dimension DataMember="ngaytaodt" SortOrder="Descending" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
       </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem2">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="DirectionalYellowDownInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="DirectionalYellowUpInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="75" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
       <GridColumns>
         <GridDimensionColumn Name="Ngày" Weight="51.772793053545584">
           <Dimension DefaultId="DataItem0" />
+          <Totals>
+            <Total />
+          </Totals>
         </GridDimensionColumn>
         <GridDimensionColumn Name="Tên Ca" Weight="59.261939218523878">
           <Dimension DefaultId="DataItem1" />
@@ -154,6 +183,7 @@
       <DataItems>
         <Dimension DataMember="ngaytaodt" DateTimeGroupInterval="MonthYear" DefaultId="DataItem0" />
         <Measure DataMember="tienconlaitheoca" DefaultId="DataItem1" />
+        <Dimension DataMember="tenCa" DefaultId="DataItem2" />
       </DataItems>
       <FormatRules>
         <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem1">
@@ -178,22 +208,46 @@
         </GridItemFormatRule>
       </FormatRules>
       <GridColumns>
-        <GridDimensionColumn Name="Ngày" Weight="60.910404624277454">
+        <GridDimensionColumn Name="Tháng Năm" Weight="60.910404624277454">
           <Dimension DefaultId="DataItem0" />
+          <Totals>
+            <Total />
+          </Totals>
         </GridDimensionColumn>
-        <GridMeasureColumn Name="Tổng Tiền" Weight="89.089595375722539">
+        <GridDimensionColumn Name="Tên Ca">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Name="Tổng" Weight="89.089595375722539">
           <Measure DefaultId="DataItem1" />
         </GridMeasureColumn>
       </GridColumns>
       <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <Grid ComponentName="gridDashboardItem3" Name="Tổng theo Năm" DataSource="dashboardSqlDataSource1" DataMember="DoanhThu">
+      <DataItems>
+        <Dimension DataMember="ngaytaodt" DefaultId="DataItem0" />
+        <Measure DataMember="tienconlaitheoca" DefaultId="DataItem1" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn Name="Năm">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Name="Tổng">
+          <Measure DefaultId="DataItem1" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
     </Grid>
   </Items>
   <LayoutTree>
     <LayoutGroup Orientation="Vertical" Weight="100">
       <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="29.154929577464788" />
       <LayoutGroup Weight="70.845070422535215">
-        <LayoutItem DashboardItem="gridDashboardItem1" Weight="70.845070422535215" />
-        <LayoutItem DashboardItem="gridDashboardItem2" Weight="70.845070422535215" />
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="59.3727726300784" />
+        <LayoutGroup Orientation="Vertical" Weight="40.6272273699216">
+          <LayoutItem DashboardItem="gridDashboardItem2" Weight="50.099403578528829" />
+          <LayoutItem DashboardItem="gridDashboardItem3" Weight="49.900596421471171" />
+        </LayoutGroup>
       </LayoutGroup>
     </LayoutGroup>
   </LayoutTree>

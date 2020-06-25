@@ -75,6 +75,32 @@
         <Dimension DataMember="tenCa" Name="Tên Ca" SortOrder="Descending" DefaultId="DataItem6" />
         <Dimension DataMember="ngaytaodt" Name="Ngày" SortOrder="Descending" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
       </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem5">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="DirectionalYellowDownInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="DirectionalYellowUpInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="75" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
       <GridColumns>
         <GridDimensionColumn Weight="56.100720213659166">
           <Dimension DefaultId="DataItem0" />
@@ -188,11 +214,15 @@
                   <IconSettings IconType="DirectionalRedDownArrow" />
                 </RangeInfo>
                 <RangeInfo>
-                  <Value Type="System.Double" Value="33" />
-                  <IconSettings IconType="DirectionalYellowSideArrow" />
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="DirectionalYellowDownInclineArrow" />
                 </RangeInfo>
                 <RangeInfo>
-                  <Value Type="System.Double" Value="67" />
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="DirectionalYellowUpInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="75" />
                   <IconSettings IconType="DirectionalGreenArrowUp" />
                 </RangeInfo>
               </Ranges>
@@ -203,6 +233,9 @@
       <GridColumns>
         <GridDimensionColumn>
           <Dimension DefaultId="DataItem2" />
+          <Totals>
+            <Total />
+          </Totals>
         </GridDimensionColumn>
         <GridMeasureColumn>
           <Measure DefaultId="DataItem0" />
@@ -228,11 +261,15 @@
                   <IconSettings IconType="DirectionalRedDownArrow" />
                 </RangeInfo>
                 <RangeInfo>
-                  <Value Type="System.Double" Value="33" />
-                  <IconSettings IconType="DirectionalYellowSideArrow" />
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="DirectionalYellowDownInclineArrow" />
                 </RangeInfo>
                 <RangeInfo>
-                  <Value Type="System.Double" Value="67" />
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="DirectionalYellowUpInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="75" />
                   <IconSettings IconType="DirectionalGreenArrowUp" />
                 </RangeInfo>
               </Ranges>
@@ -243,6 +280,9 @@
       <GridColumns>
         <GridDimensionColumn Name="Ngày">
           <Dimension DefaultId="DataItem0" />
+          <Totals>
+            <Total />
+          </Totals>
         </GridDimensionColumn>
         <GridDimensionColumn Name="Tên Ca">
           <Dimension DefaultId="DataItem1" />
@@ -254,15 +294,57 @@
       <SparklineArgument DefaultId="DataItem3" />
       <GridOptions />
     </Grid>
+    <Grid ComponentName="gridDashboardItem4" Name="Tổng Theo Năm" DataSource="dashboardSqlDataSource1" DataMember="CTChiPhiTheoCa">
+      <DataItems>
+        <Dimension DataMember="ngaytaodt" DefaultId="DataItem0" />
+        <Measure DataMember="thanhtien" DefaultId="DataItem1" />
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem1">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="DirectionalYellowDownInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="DirectionalYellowUpInclineArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="75" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Name="Năm">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Name="Tổng">
+          <Measure DefaultId="DataItem1" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
   </Items>
   <LayoutTree>
     <LayoutGroup Orientation="Vertical" Weight="100">
-      <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="25.91549295774648" />
-      <LayoutGroup Weight="74.08450704225352">
-        <LayoutItem DashboardItem="gridDashboardItem1" Weight="63.364219529579472" />
-        <LayoutGroup Orientation="Vertical" Weight="36.635780470420528">
-          <LayoutItem DashboardItem="gridDashboardItem3" Weight="50" />
-          <LayoutItem DashboardItem="gridDashboardItem2" Weight="50" />
+      <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="27.464788732394368" />
+      <LayoutGroup Weight="72.535211267605632">
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="59.800427655024947" />
+        <LayoutGroup Orientation="Vertical" Weight="40.199572344975053">
+          <LayoutItem DashboardItem="gridDashboardItem3" Weight="38.058252427184463" />
+          <LayoutItem DashboardItem="gridDashboardItem2" Weight="34.563106796116507" />
+          <LayoutItem DashboardItem="gridDashboardItem4" Weight="27.378640776699029" />
         </LayoutGroup>
       </LayoutGroup>
     </LayoutGroup>
