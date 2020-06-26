@@ -159,7 +159,7 @@
             // rangeFilterDashboardItem1
             // 
             dimension1.DataMember = "DoanhThu_ngaytaodt";
-            dimension1.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.MonthYear;
+            dimension1.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.DayMonthYear;
             this.rangeFilterDashboardItem1.Argument = dimension1;
             this.rangeFilterDashboardItem1.ComponentName = "rangeFilterDashboardItem1";
             measure1.DataMember = "tong dt";

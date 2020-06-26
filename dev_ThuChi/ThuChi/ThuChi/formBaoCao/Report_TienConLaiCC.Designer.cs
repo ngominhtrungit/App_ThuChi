@@ -161,13 +161,14 @@
             // 
             dimension1.DataMember = "ngaytaodt";
             dimension1.DateTimeFormat.ExactDateFormat = DevExpress.DashboardCommon.ExactDateFormat.Month;
-            dimension1.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.MonthYear;
+            dimension1.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.DayMonthYear;
+            measure1.DataMember = "tienconlaitheoca";
+            dimension1.TopNOptions.Measure = measure1;
             this.rangeFilterDashboardItem1.Argument = dimension1;
             this.rangeFilterDashboardItem1.ComponentName = "rangeFilterDashboardItem1";
-            measure1.DataMember = "tienconlaitheoca";
             this.rangeFilterDashboardItem1.DataItemRepository.Clear();
-            this.rangeFilterDashboardItem1.DataItemRepository.Add(measure1, "DataItem1");
             this.rangeFilterDashboardItem1.DataItemRepository.Add(dimension1, "DataItem2");
+            this.rangeFilterDashboardItem1.DataItemRepository.Add(measure1, "DataItem0");
             this.rangeFilterDashboardItem1.DataMember = "DoanhThu";
             this.rangeFilterDashboardItem1.DataSource = this.dashboardSqlDataSource1;
             flowDateTimePeriodLimit1.Interval = DevExpress.DashboardCommon.DateTimeInterval.Month;
@@ -503,8 +504,8 @@
             dashboardLayoutGroup1.Weight = 100D;
             this.LayoutRoot = dashboardLayoutGroup1;
             this.Title.Text = "Báo Cáo Tiền Còn Lại Cuối Ca";
-            ((System.ComponentModel.ISupportInitialize)(dimension1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(dimension1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rangeFilterDashboardItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(dimension2)).EndInit();

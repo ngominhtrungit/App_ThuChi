@@ -199,7 +199,7 @@
             // rangeFilterDashboardItem1
             // 
             dimension1.DataMember = "ngaytaodt";
-            dimension1.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.MonthYear;
+            dimension1.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.DayMonthYear;
             this.rangeFilterDashboardItem1.Argument = dimension1;
             this.rangeFilterDashboardItem1.ComponentName = "rangeFilterDashboardItem1";
             measure1.DataMember = "thanhtien";
@@ -256,7 +256,7 @@
             dateTimePeriod7});
             this.rangeFilterDashboardItem1.InteractivityOptions.IgnoreMasterFilters = true;
             this.rangeFilterDashboardItem1.Name = "Filter theo tháng năm";
-            simpleSeries1.SeriesType = DevExpress.DashboardCommon.SimpleSeriesType.FullStackedBar;
+            simpleSeries1.SeriesType = DevExpress.DashboardCommon.SimpleSeriesType.StackedBar;
             simpleSeries1.AddDataItem("Value", measure1);
             this.rangeFilterDashboardItem1.Series.AddRange(new DevExpress.DashboardCommon.SimpleSeries[] {
             simpleSeries1});

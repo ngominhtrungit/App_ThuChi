@@ -185,16 +185,16 @@
             // rangeFilterDashboardItem1
             // 
             dimension1.DataMember = "ngaytaocp";
-            dimension1.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.MonthYear;
+            dimension1.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.DayMonthYear;
             this.rangeFilterDashboardItem1.Argument = dimension1;
             this.rangeFilterDashboardItem1.ComponentName = "rangeFilterDashboardItem1";
-            measure1.DataMember = "sotienlay";
-            measure2.DataMember = "ngaytaocp";
-            measure2.SummaryType = DevExpress.DashboardCommon.SummaryType.Count;
+            measure1.DataMember = "ngaytaocp";
+            measure1.SummaryType = DevExpress.DashboardCommon.SummaryType.Count;
+            measure2.DataMember = "sotienlay";
             this.rangeFilterDashboardItem1.DataItemRepository.Clear();
-            this.rangeFilterDashboardItem1.DataItemRepository.Add(measure1, "DataItem2");
-            this.rangeFilterDashboardItem1.DataItemRepository.Add(measure2, "DataItem3");
             this.rangeFilterDashboardItem1.DataItemRepository.Add(dimension1, "DataItem4");
+            this.rangeFilterDashboardItem1.DataItemRepository.Add(measure1, "DataItem0");
+            this.rangeFilterDashboardItem1.DataItemRepository.Add(measure2, "DataItem1");
             this.rangeFilterDashboardItem1.DataMember = "ChuDauTu";
             this.rangeFilterDashboardItem1.DataSource = this.dashboardSqlDataSource1;
             flowDateTimePeriodLimit1.Interval = DevExpress.DashboardCommon.DateTimeInterval.Month;
@@ -265,10 +265,10 @@
             this.rangeFilterDashboardItem1.DefaultDateTimePeriodName = "Tháng Hiện Tại";
             this.rangeFilterDashboardItem1.InteractivityOptions.IgnoreMasterFilters = true;
             this.rangeFilterDashboardItem1.Name = "Báo Cáo Tiền Chủ Đầu Tư nhận hàng tháng";
-            simpleSeries1.SeriesType = DevExpress.DashboardCommon.SimpleSeriesType.Line;
-            simpleSeries1.AddDataItem("Value", measure2);
-            simpleSeries2.SeriesType = DevExpress.DashboardCommon.SimpleSeriesType.Line;
-            simpleSeries2.AddDataItem("Value", measure1);
+            simpleSeries1.SeriesType = DevExpress.DashboardCommon.SimpleSeriesType.StackedBar;
+            simpleSeries1.AddDataItem("Value", measure1);
+            simpleSeries2.SeriesType = DevExpress.DashboardCommon.SimpleSeriesType.StackedBar;
+            simpleSeries2.AddDataItem("Value", measure2);
             this.rangeFilterDashboardItem1.Series.AddRange(new DevExpress.DashboardCommon.SimpleSeries[] {
             simpleSeries1,
             simpleSeries2});

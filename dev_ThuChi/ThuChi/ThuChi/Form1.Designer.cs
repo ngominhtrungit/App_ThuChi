@@ -83,6 +83,8 @@
             this.userCtrl_ReportChiPhiTheoCa1 = new ThuChi.UserControl.userCtrl_ReportChiPhiTheoCa();
             this.userCtrl_TienConLaiCuoiCa1 = new ThuChi.UserControl.userCtrl_TienConLaiCuoiCa();
             this.userCtrl_ReportTienConLai1 = new ThuChi.UserControl.userCtrl_ReportTienConLai();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bt_SearchDTNgay = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -108,9 +110,10 @@
             this.barButtonItem2,
             this.bt_ChiTietCDT,
             this.bt_BaoCaoCPTC,
-            this.bt_BaoCaoDTTCC});
+            this.bt_BaoCaoDTTCC,
+            this.bt_SearchDTNgay});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 17;
+            this.ribbonControl1.MaxItemId = 18;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rb_Dashboard,
@@ -372,6 +375,8 @@
             // 
             this.rb_search.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_search.Appearance.Options.UseFont = true;
+            this.rb_search.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup14});
             this.rb_search.Name = "rb_search";
             this.rb_search.Text = "Tìm Kiếm";
             // 
@@ -518,6 +523,18 @@
             this.userCtrl_ReportTienConLai1.Size = new System.Drawing.Size(1625, 694);
             this.userCtrl_ReportTienConLai1.TabIndex = 27;
             // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.bt_SearchDTNgay);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            this.ribbonPageGroup14.Text = "ribbonPageGroup14";
+            // 
+            // bt_SearchDTNgay
+            // 
+            this.bt_SearchDTNgay.Caption = "Tìm kiếm doanh thu theo ngày";
+            this.bt_SearchDTNgay.Id = 17;
+            this.bt_SearchDTNgay.Name = "bt_SearchDTNgay";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -605,6 +622,8 @@
         private DevExpress.XtraBars.BarButtonItem bt_BaoCaoDTTCC;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private UserControl.userCtrl_ReportTienConLai userCtrl_ReportTienConLai1;
+        private DevExpress.XtraBars.BarButtonItem bt_SearchDTNgay;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
     }
 }
 

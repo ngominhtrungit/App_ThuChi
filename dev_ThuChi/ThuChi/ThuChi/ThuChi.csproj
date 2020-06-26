@@ -263,6 +263,12 @@
     <Compile Include="UserControl\userCtrl_ReportTienConLai.Designer.cs">
       <DependentUpon>userCtrl_ReportTienConLai.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\userCtrl_SearchManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\userCtrl_SearchManager.Designer.cs">
+      <DependentUpon>userCtrl_SearchManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\userCtrl_TienConLaiCuoiCa.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -345,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\userCtrl_ReportTienConLai.resx">
       <DependentUpon>userCtrl_ReportTienConLai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\userCtrl_SearchManager.resx">
+      <DependentUpon>userCtrl_SearchManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\userCtrl_TienConLaiCuoiCa.resx">
       <DependentUpon>userCtrl_TienConLaiCuoiCa.cs</DependentUpon>
