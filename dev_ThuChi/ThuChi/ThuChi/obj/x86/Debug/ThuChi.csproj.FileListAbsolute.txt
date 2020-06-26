@@ -719,4 +719,3 @@ D:\Github Clone\New folder\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\Thu
 D:\Github Clone\New folder\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.userCtrl_ReportTienConLai.resources
 D:\Github Clone\New folder\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.userCtrl_TienConLaiCuoiCa.resources
 D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.UserControl.Report_CDT_NhanTien.resources
-D:\Code\winform\github\App_ThuChi\dev_ThuChi\ThuChi\ThuChi\obj\x86\Debug\ThuChi.csprojAssemblyReference.cache

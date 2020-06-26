@@ -30,23 +30,15 @@ namespace ThuChi
         private void userCtrl_ChiPhi_Load(object sender, EventArgs e)
         {
             LoadDataChiPhi();
-            CustomCellMergeColumnGridView customCellMergeColumnGrid = new CustomCellMergeColumnGridView(gridView1, "ngaytaocp");
-            customCellMergeColumnGrid.CellMergeColumnGridViewChiPhiGV1();//dùng lại của Tiền Cuối ca vì chỉ merge 1 ô
             //add button into gridview
-            AddUnboundColumn();
-            AddRepository();
+           
             //LoadDoanhThuIDtoComboBox();
 
             //mouse click row in gridview
             //chọn dòng chiphiID
             ClickMouseOnGridviewbyComlumn();
-
             txt_caID.Text = null;
-
-
         }
-
-
 
         void LoadDataChiPhi()
         {
@@ -58,10 +50,33 @@ namespace ThuChi
                 gridView1.Columns[2].DisplayFormat.FormatType = FormatType.DateTime;
                 gridView1.Columns[2].DisplayFormat.FormatString = "d/M/yyyy";
             }
-
-
+            AddUnboundColumn();
+            AddRepository();
+            CustomCellMergeColumnGridView();
+            //CustomCellMergeColumnGridView customCellMergeColumnGrid = new CustomCellMergeColumnGridView(gridView1, "ngaytapcp");
+            //customCellMergeColumnGrid.CellMergeColumnGridViewTienCC();
             DisableEditColumnsGridView.CustomEditColumnsGridView(gridView1, new int[] { 0, 1, 2, 3 });
+            
         }
+
+        private void CustomCellMergeColumnGridView()
+        {
+            for (int i = 0; i < gridView1.Columns.Count; i++)
+            {
+                if (gridView1.Columns[i].FieldName == "ngaytaocp")
+                {
+                    //gridView1.Columns[i + 1].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+                    gridView1.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+
+                }
+                else
+                {
+                    gridView1.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+                }
+            }
+
+        }
+
 
         #region Add button xóa into gridview
         private void AddRepository()
@@ -74,6 +89,8 @@ namespace ThuChi
             edit.Buttons[0].Caption = "Xóa";
             edit.Buttons[0].Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph;
             gridView1.Columns["Button"].ColumnEdit = edit;
+
+         
         }
 
         void edit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -94,7 +111,6 @@ namespace ThuChi
             {
                 MessageBox.Show("Lỗi không xóa được, vì đã có dữ liệu liên quan tới Mã Chi Phí: " + id + ", thuộc ngày " + ngay + "! Nếu có bất kỳ thắc mắc gì vui lòng liên hệ Trung sdt: 0902669115", "Lỗi.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void AddUnboundColumn()
@@ -138,6 +154,7 @@ namespace ThuChi
         {
             gridView1.Columns["chiphitcID"].View.OptionsBehavior.EditorShowMode = EditorShowMode.MouseUp;
             gridView1.RowClick += gridView1_RowClick;
+            
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -156,7 +173,6 @@ namespace ThuChi
         {
             try
             {
-
                 string query = "exec proc_ShowCTCP_by_chiphiID @chiphitcID='" + id + "'";
                 gridControl2.DataSource = DataProvider.Instance.ExecuteQuery(query);
                 if (gridView2.Columns.Count > 1)
@@ -169,6 +185,10 @@ namespace ThuChi
                     gridView2.Columns[8].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
                     gridView2.Columns[8].DisplayFormat.FormatString = "n0";
                 }
+               
+                DisableEditColumnsGridView.CustomEditColumnsGridView(gridView2, new int[] { 0, 1, 2, 3 });
+                AddUnboundColumn2();
+                AddRepository2();
             }
             catch (SqlException ex)
             {
@@ -239,5 +259,65 @@ namespace ThuChi
         {
             DataProvider.Instance.ChoseComboBoxChangeTextBoxChiPhiTC(date_ChoseDoanhThuID.Value, cb_tenCa, txt_caID);
         }
+
+        #region Add button xóa into gridview2
+        private void AddRepository2()
+        {
+
+            RepositoryItemButtonEdit edit = new RepositoryItemButtonEdit();
+            edit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            edit.Appearance.BackColor = ColorTranslator.FromHtml("#B2D6ea");
+            edit.ButtonClick += edit_ButtonClick2;
+            edit.Buttons[0].Caption = "Xóa";
+            edit.Buttons[0].Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph;
+            gridView2.Columns["Button"].ColumnEdit = edit;
+
+
+        }
+
+        void edit_ButtonClick2(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //dùng để load trên gridview 2 khi xóa
+            //sẽ lấy chiphitcID trên gridview1
+            string chiphitcID = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[0]).ToString();
+
+            string ctcptcID = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[0]).ToString();
+            string ngay = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[2]).ToString();
+            DateTime dt = DateTime.Parse(ngay, new CultureInfo("en-CA"));
+
+            string tenCa = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[3]).ToString();
+
+            try
+            {
+                if (MessageBox.Show("Xóa '" + tenCa + "', thuộc ngày '" + dt.ToString("d/M/yyyy")+"'", "Thông Báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string query = "exec [dbo].[proc_DeleteCTChiPhiTheoCa] @ctcptcID ";
+                    DataProvider.Instance.ExecuteQuery(query, new object[] { ctcptcID });
+
+                    LoadDataBychiphitcID(chiphitcID);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi không Xóa '" + tenCa + "', thuộc ngày '" + dt.ToString("d/M/yyyy") + "'! Nếu có bất kỳ thắc mắc gì vui lòng liên hệ Trung sdt: 0902669115", "Lỗi.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AddUnboundColumn2()
+        {
+            if (gridView2.Columns["Button"] == null)
+            {
+                GridColumn unbColumn = gridView2.Columns.AddField("Button");
+           
+                unbColumn.VisibleIndex = gridView2.Columns.Count;
+                unbColumn.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            }
+            else
+            {
+                return;
+            }
+           
+        }
+        #endregion
     }
 }
