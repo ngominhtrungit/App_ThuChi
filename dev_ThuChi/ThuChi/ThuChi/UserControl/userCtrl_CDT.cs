@@ -16,6 +16,7 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Repository;
 using ThuChi.Class;
 using DevExpress.XtraGrid.Views.BandedGrid;
+using System.Globalization;
 
 namespace ThuChi
 {
@@ -112,6 +113,17 @@ namespace ThuChi
                 string query = "exec proc_ShowCTCP_by_cdtID @cdtID='" + id + "'";
                 gridControl2.DataSource = DataProvider.Instance.ExecuteQuery(query);
 
+                if (gridView2.Columns.Count>1)
+                {
+                    gridView2.Columns[3].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+                    gridView2.Columns[3].DisplayFormat.FormatString = "d/M/yyyy";
+
+                    gridView2.Columns[6].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                    gridView2.Columns[6].DisplayFormat.FormatString = "n0";
+                }
+                AddUnboundColumn2();
+                AddRepository2();
+                DisableEditColumnsGridView.CustomEditColumnsGridView(gridView2,new int[] {0,1,2,3,4,5 });
             }
             catch (SqlException ex)
             {
@@ -218,5 +230,56 @@ namespace ThuChi
                 e.Handled = true;
             }
         }
+
+        #region Add button xóa into gridview
+        private void AddRepository2()
+        {
+
+            RepositoryItemButtonEdit edit = new RepositoryItemButtonEdit();
+            edit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            edit.Appearance.BackColor = ColorTranslator.FromHtml("#B2D6ea");
+            edit.ButtonClick += edit_ButtonClick2;
+            edit.Buttons[0].Caption = "Xóa";
+            edit.Buttons[0].Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph;
+            gridView2.Columns["Button"].ColumnEdit = edit;
+        }
+
+        void edit_ButtonClick2(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
+            string tenCa = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[4]).ToString();
+            string id = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[0]).ToString();
+            string ngay = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[3]).ToString();
+            string sotienlay = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[6]).ToString();
+            DateTime dt = DateTime.Parse(ngay, new CultureInfo("en-CA"));
+            try
+            {
+                if (MessageBox.Show("Xóa tên ca: '" + tenCa + "', ngày '" + dt.ToString("d/M/yyyy") + "' với số tiền lấy: '"+sotienlay+"'", "Thông Báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string query = "exec [dbo].[proc_DeleteCDT_CPTheoCa] @ctcdtID ";
+                    DataProvider.Instance.ExecuteQuery(query, new object[] { id.ToString() });
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi không Xóa tên ca: '" + tenCa + "', ngày '" + dt.ToString("d/M/yyyy") + "'! Nếu có bất kỳ thắc mắc gì vui lòng liên hệ Trung sdt: 0902669115", "Lỗi.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void AddUnboundColumn2()
+        {
+            if (gridView2.Columns["Button"]==null)
+            {
+                GridColumn unbColumn = gridView2.Columns.AddField("Button");
+                unbColumn.VisibleIndex = gridView2.Columns.Count;
+                unbColumn.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            }
+            else
+            {
+                return;
+            }
+        }
+        #endregion
     }
 }

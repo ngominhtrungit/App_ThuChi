@@ -38,11 +38,16 @@ namespace ThuChi
             string query = "exec proc_ShowCTCPTC";
             gridControl1.DataSource = DataProvider.Instance.ExecuteQuery(query);
             //format show datetime show in gridview
-            //if (gridView1.Columns.Count > 1)
-            //{
-            //    gridView1.Columns[4].DisplayFormat.FormatType = FormatType.DateTime;
-            //    gridView1.Columns[4].DisplayFormat.FormatString = "d/M/yyyy";
-            //}
+            if (gridView1.Columns.Count > 1)
+            {
+                gridView1.Columns[4].DisplayFormat.FormatType = FormatType.DateTime;
+                gridView1.Columns[4].DisplayFormat.FormatString = "d/M/yyyy";
+
+                gridView1.Columns[7].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                gridView1.Columns[7].DisplayFormat.FormatString = "n0";
+                gridView1.Columns[8].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                gridView1.Columns[8].DisplayFormat.FormatString = "n0";
+            }
             //CustomCellMergeColumnGridView();
             CustomCellMergeColumnGridView customCellMergeColumnGrid = new CustomCellMergeColumnGridView(gridView1, "ngaytaocp");
             customCellMergeColumnGrid.CellMergeColumnGridViewDTTC();

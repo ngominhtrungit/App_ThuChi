@@ -11,6 +11,9 @@ using DevExpress.XtraEditors;
 using ThuChi.DAO;
 using DevExpress.Utils;
 using ThuChi.Class;
+using DevExpress.XtraEditors.Repository;
+using System.Globalization;
+using DevExpress.XtraGrid.Columns;
 
 namespace ThuChi.UserControl
 {
@@ -41,7 +44,8 @@ namespace ThuChi.UserControl
                 gridView1.Columns[4].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
                 gridView1.Columns[4].DisplayFormat.FormatString = "n0";
             }
-
+            AddUnboundColumn();
+            AddRepository();
             DisableEditColumnsGridView.CustomEditColumnsGridView(gridView1, new int[] {0,1,2,3,4 });
         }
 
@@ -77,5 +81,56 @@ namespace ThuChi.UserControl
             }
            
         }
+
+        #region button xóa
+        private void AddRepository()
+        {
+
+            RepositoryItemButtonEdit edit = new RepositoryItemButtonEdit();
+            edit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            edit.Appearance.BackColor = ColorTranslator.FromHtml("#B2D6ea");
+            edit.ButtonClick += edit_ButtonClick;
+            edit.Buttons[0].Caption = "Xóa";
+            edit.Buttons[0].Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph;
+            gridView1.Columns["Button"].ColumnEdit = edit;
+        }
+
+        void edit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            int id = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[0]);
+            string ngay = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[2]).ToString();
+            DateTime dt = DateTime.Parse(ngay, new CultureInfo("en-CA"));
+            string tenCa = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[3]).ToString();
+            try
+            {
+                if (MessageBox.Show("Xóa '" + tenCa + "', thuộc ngày '" + dt.ToString("d/M/yyyy")+"'?", "Thông Báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string query = "exec [dbo].[proc_DeleteTienConLaiTheoCa] @tlID ";
+                    DataProvider.Instance.ExecuteQuery(query, new object[] { id.ToString() });
+                    AutoCloseMessageBox.Show("Xóa '" + tenCa + "', thuộc ngày '" + dt.ToString("d/M/yyyy") + "' thành công!", "thông báo!", 2500);
+                    LoadDataTienConLaiTheoCa();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi không Xóa '" + tenCa + "', thuộc ngày '" + dt.ToString("d/M/yyyy") + "'! Nếu có bất kỳ thắc mắc gì vui lòng liên hệ Trung sdt: 0902669115", "Lỗi.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void AddUnboundColumn()
+        {
+            if (gridView1.Columns["Button"]==null)
+            {
+                GridColumn unbColumn = gridView1.Columns.AddField("Button");
+                unbColumn.VisibleIndex = gridView1.Columns.Count;
+                unbColumn.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            }
+            else
+            {
+                return;
+            }
+        }
+        #endregion
     }
 }

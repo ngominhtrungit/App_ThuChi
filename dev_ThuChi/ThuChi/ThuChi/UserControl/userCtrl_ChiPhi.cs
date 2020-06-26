@@ -115,9 +115,16 @@ namespace ThuChi
 
         private void AddUnboundColumn()
         {
-            GridColumn unbColumn = gridView1.Columns.AddField("Button");
-            unbColumn.VisibleIndex = gridView1.Columns.Count;
-            unbColumn.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            if (gridView2.Columns["Button"] == null)
+            {
+                GridColumn unbColumn = gridView1.Columns.AddField("Button");
+                unbColumn.VisibleIndex = gridView1.Columns.Count;
+                unbColumn.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            }
+            else
+            {
+                return;
+            }
         }
         #endregion
 
