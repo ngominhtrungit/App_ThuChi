@@ -46,6 +46,7 @@
             this.bt_ChiTietCDT = new DevExpress.XtraBars.BarButtonItem();
             this.bt_BaoCaoCPTC = new DevExpress.XtraBars.BarButtonItem();
             this.bt_BaoCaoDTTCC = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_SearchDTNgay = new DevExpress.XtraBars.BarButtonItem();
             this.rb_Dashboard = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rb_DoanhThu = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -63,7 +64,6 @@
             this.rb_TotalDTCuoiNgay = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.rb_search = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rb_saoluu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,8 +83,6 @@
             this.userCtrl_ReportChiPhiTheoCa1 = new ThuChi.UserControl.userCtrl_ReportChiPhiTheoCa();
             this.userCtrl_TienConLaiCuoiCa1 = new ThuChi.UserControl.userCtrl_TienConLaiCuoiCa();
             this.userCtrl_ReportTienConLai1 = new ThuChi.UserControl.userCtrl_ReportTienConLai();
-            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bt_SearchDTNgay = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -121,10 +119,9 @@
             this.rb_ChiPhi,
             this.rb_ChuDauTu,
             this.rb_TotalDTCuoiNgay,
-            this.rb_search,
             this.rb_saoluu,
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1625, 178);
+            this.ribbonControl1.Size = new System.Drawing.Size(1336, 178);
             // 
             // barButtonItem1
             // 
@@ -244,6 +241,12 @@
             this.bt_BaoCaoDTTCC.Id = 16;
             this.bt_BaoCaoDTTCC.Name = "bt_BaoCaoDTTCC";
             this.bt_BaoCaoDTTCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_BaoCaoDTTCC_ItemClick);
+            // 
+            // bt_SearchDTNgay
+            // 
+            this.bt_SearchDTNgay.Caption = "Tìm kiếm doanh thu theo ngày";
+            this.bt_SearchDTNgay.Id = 17;
+            this.bt_SearchDTNgay.Name = "bt_SearchDTNgay";
             // 
             // rb_Dashboard
             // 
@@ -371,15 +374,6 @@
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             this.ribbonPageGroup13.Text = "ribbonPageGroup13";
             // 
-            // rb_search
-            // 
-            this.rb_search.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_search.Appearance.Options.UseFont = true;
-            this.rb_search.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup14});
-            this.rb_search.Name = "rb_search";
-            this.rb_search.Text = "Tìm Kiếm";
-            // 
             // rb_saoluu
             // 
             this.rb_saoluu.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -425,7 +419,7 @@
             this.userCtrl_DoanhThu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_DoanhThu1.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_DoanhThu1.Name = "userCtrl_DoanhThu1";
-            this.userCtrl_DoanhThu1.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_DoanhThu1.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_DoanhThu1.TabIndex = 1;
             // 
             // userCtrl_DoanhThuTheoCa1
@@ -434,7 +428,7 @@
             this.userCtrl_DoanhThuTheoCa1.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_DoanhThuTheoCa1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userCtrl_DoanhThuTheoCa1.Name = "userCtrl_DoanhThuTheoCa1";
-            this.userCtrl_DoanhThuTheoCa1.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_DoanhThuTheoCa1.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_DoanhThuTheoCa1.TabIndex = 3;
             // 
             // defaultLookAndFeel1
@@ -446,7 +440,7 @@
             this.userCtrl_Dashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_Dashboard1.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_Dashboard1.Name = "userCtrl_Dashboard1";
-            this.userCtrl_Dashboard1.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_Dashboard1.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_Dashboard1.TabIndex = 5;
             // 
             // userCtrl_ChiPhi2
@@ -454,7 +448,7 @@
             this.userCtrl_ChiPhi2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_ChiPhi2.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_ChiPhi2.Name = "userCtrl_ChiPhi2";
-            this.userCtrl_ChiPhi2.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_ChiPhi2.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_ChiPhi2.TabIndex = 9;
             // 
             // userCtrl_CTCP2
@@ -462,7 +456,7 @@
             this.userCtrl_CTCP2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_CTCP2.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_CTCP2.Name = "userCtrl_CTCP2";
-            this.userCtrl_CTCP2.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_CTCP2.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_CTCP2.TabIndex = 11;
             // 
             // userCtrl_CDT1
@@ -471,7 +465,7 @@
             this.userCtrl_CDT1.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_CDT1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userCtrl_CDT1.Name = "userCtrl_CDT1";
-            this.userCtrl_CDT1.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_CDT1.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_CDT1.TabIndex = 13;
             // 
             // userCtrl_CDT_CPTC1
@@ -480,7 +474,7 @@
             this.userCtrl_CDT_CPTC1.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_CDT_CPTC1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userCtrl_CDT_CPTC1.Name = "userCtrl_CDT_CPTC1";
-            this.userCtrl_CDT_CPTC1.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_CDT_CPTC1.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_CDT_CPTC1.TabIndex = 15;
             // 
             // userCtrl_DTBanHang1
@@ -488,7 +482,7 @@
             this.userCtrl_DTBanHang1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_DTBanHang1.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_DTBanHang1.Name = "userCtrl_DTBanHang1";
-            this.userCtrl_DTBanHang1.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_DTBanHang1.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_DTBanHang1.TabIndex = 17;
             // 
             // userCtrl_ReportCDTTien1
@@ -496,7 +490,7 @@
             this.userCtrl_ReportCDTTien1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_ReportCDTTien1.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_ReportCDTTien1.Name = "userCtrl_ReportCDTTien1";
-            this.userCtrl_ReportCDTTien1.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_ReportCDTTien1.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_ReportCDTTien1.TabIndex = 21;
             // 
             // userCtrl_ReportChiPhiTheoCa1
@@ -504,7 +498,7 @@
             this.userCtrl_ReportChiPhiTheoCa1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_ReportChiPhiTheoCa1.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_ReportChiPhiTheoCa1.Name = "userCtrl_ReportChiPhiTheoCa1";
-            this.userCtrl_ReportChiPhiTheoCa1.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_ReportChiPhiTheoCa1.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_ReportChiPhiTheoCa1.TabIndex = 23;
             // 
             // userCtrl_TienConLaiCuoiCa1
@@ -512,7 +506,7 @@
             this.userCtrl_TienConLaiCuoiCa1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_TienConLaiCuoiCa1.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_TienConLaiCuoiCa1.Name = "userCtrl_TienConLaiCuoiCa1";
-            this.userCtrl_TienConLaiCuoiCa1.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_TienConLaiCuoiCa1.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_TienConLaiCuoiCa1.TabIndex = 25;
             // 
             // userCtrl_ReportTienConLai1
@@ -520,26 +514,14 @@
             this.userCtrl_ReportTienConLai1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userCtrl_ReportTienConLai1.Location = new System.Drawing.Point(0, 178);
             this.userCtrl_ReportTienConLai1.Name = "userCtrl_ReportTienConLai1";
-            this.userCtrl_ReportTienConLai1.Size = new System.Drawing.Size(1625, 694);
+            this.userCtrl_ReportTienConLai1.Size = new System.Drawing.Size(1336, 694);
             this.userCtrl_ReportTienConLai1.TabIndex = 27;
-            // 
-            // ribbonPageGroup14
-            // 
-            this.ribbonPageGroup14.ItemLinks.Add(this.bt_SearchDTNgay);
-            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
-            this.ribbonPageGroup14.Text = "ribbonPageGroup14";
-            // 
-            // bt_SearchDTNgay
-            // 
-            this.bt_SearchDTNgay.Caption = "Tìm kiếm doanh thu theo ngày";
-            this.bt_SearchDTNgay.Id = 17;
-            this.bt_SearchDTNgay.Name = "bt_SearchDTNgay";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1625, 872);
+            this.ClientSize = new System.Drawing.Size(1336, 872);
             this.Controls.Add(this.userCtrl_ReportTienConLai1);
             this.Controls.Add(this.userCtrl_TienConLaiCuoiCa1);
             this.Controls.Add(this.userCtrl_ReportChiPhiTheoCa1);
@@ -554,7 +536,6 @@
             this.Controls.Add(this.userCtrl_DoanhThu1);
             this.Controls.Add(this.ribbonControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Phần mềm Báo cáo kết quả kinh doanh - demo";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -573,7 +554,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPage rb_ChiPhi;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rb_search;
         private DevExpress.XtraBars.Ribbon.RibbonPage rb_saoluu;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem bt_CreateEditDT;
@@ -623,7 +603,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private UserControl.userCtrl_ReportTienConLai userCtrl_ReportTienConLai1;
         private DevExpress.XtraBars.BarButtonItem bt_SearchDTNgay;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
     }
 }
 

@@ -22,7 +22,9 @@ namespace ThuChi
         private void Form1_Load(object sender, EventArgs e)
         {
             ribbonControl1.Minimized = !ribbonControl1.Minimized;
-            userCtrl_DoanhThu1.Hide();
+
+            userCtrl_DoanhThu1.Show();
+            userCtrl_DoanhThu1.BringToFront();
             userCtrl_DoanhThuTheoCa1.Hide();
             userCtrl_Dashboard1.Hide();
             userCtrl_DTBanHang1.Hide();
